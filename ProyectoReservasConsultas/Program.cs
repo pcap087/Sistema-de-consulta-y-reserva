@@ -53,6 +53,8 @@ namespace ProyectoReservasConsultas
 
             Console.Write("Fin del programa");
             Console.ReadKey();
+
+            Console.Write("Comentario Pablo prueba para el formulario de persona");
         }
     }
 }
