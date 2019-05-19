@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoReservasConsultas
 {
@@ -12,7 +13,7 @@ namespace ProyectoReservasConsultas
         static void Main(string[] args)
         {
 
-            Paciente p1 = new Paciente { nro_documento = "1", nombre = "Roque", apellido = "Santacruz", email = "correo1", sexo = Sexo.Masculino, estadoc = EstadoCivil.Casado };
+            /* Paciente p1 = new Paciente { nro_documento = "1", nombre = "Roque", apellido = "Santacruz", email = "correo1", sexo = Sexo.Masculino, estadoc = EstadoCivil.Casado };
 
             Medico m1 = new Medico { nro_documento = "1", nombre = "Mario", apellido = "Gonzalez", email = "correo2", Especialidades = Especialidades.Cardiologia };
 
@@ -52,7 +53,10 @@ namespace ProyectoReservasConsultas
 
 
             Console.Write("Fin del programa");
-            Console.ReadKey();
+            Console.ReadKey();*/
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmMenu());
 
             Console.Write("Comentario Pablo prueba para el formulario de persona");
         }
