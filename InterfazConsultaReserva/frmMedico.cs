@@ -23,6 +23,7 @@ namespace InterfazConsultaReserva
             Medico.AgregarMedico(medico);
             ActualizarListaMedico();
             LimpiarFormulario();
+
         }
 
         private void LimpiarFormulario()
