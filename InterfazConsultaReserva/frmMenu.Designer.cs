@@ -97,26 +97,28 @@
             // tsmMedico
             // 
             this.tsmMedico.Name = "tsmMedico";
-            this.tsmMedico.Size = new System.Drawing.Size(180, 22);
+            this.tsmMedico.Size = new System.Drawing.Size(152, 22);
             this.tsmMedico.Text = "Medico";
             this.tsmMedico.Click += new System.EventHandler(this.tsmMedico_Click);
             // 
             // tsmPaciente
             // 
             this.tsmPaciente.Name = "tsmPaciente";
-            this.tsmPaciente.Size = new System.Drawing.Size(180, 22);
+            this.tsmPaciente.Size = new System.Drawing.Size(152, 22);
             this.tsmPaciente.Text = "Paciente";
+            this.tsmPaciente.Click += new System.EventHandler(this.tsmPaciente_Click);
             // 
             // tsmFuncionario
             // 
             this.tsmFuncionario.Name = "tsmFuncionario";
-            this.tsmFuncionario.Size = new System.Drawing.Size(180, 22);
+            this.tsmFuncionario.Size = new System.Drawing.Size(152, 22);
             this.tsmFuncionario.Text = "Funcionario";
+            this.tsmFuncionario.Click += new System.EventHandler(this.tsmFuncionario_Click);
             // 
             // tsmTurno
             // 
             this.tsmTurno.Name = "tsmTurno";
-            this.tsmTurno.Size = new System.Drawing.Size(180, 22);
+            this.tsmTurno.Size = new System.Drawing.Size(152, 22);
             this.tsmTurno.Text = "Turno";
             // 
             // frmMenu

@@ -11,7 +11,31 @@ namespace ClassLibrary1
     {
         public cargo cargo { get; set; }
 
-        
+        public static List<Funcionario> listaFuncionarios = new List<Funcionario>();
+
+        //metodo agregar
+        public static void AgregarFuncionario(Funcionario m)
+        {
+            listaFuncionarios.Add(m);
+        }
+
+        //metodo eliminar
+        public static void EliminarFuncionario(Funcionario m)
+        {
+            listaFuncionarios.Remove(m);
+        }
+
+        public static List<Funcionario> ObtenerFuncionario()
+        {
+            return listaFuncionarios;
+        }
+
+        public override string ToString()
+        {
+            return nombre;
+        }
+
+
     }
     
 }
