@@ -99,6 +99,7 @@
             this.tsmMedico.Name = "tsmMedico";
             this.tsmMedico.Size = new System.Drawing.Size(152, 22);
             this.tsmMedico.Text = "Medico";
+            this.tsmMedico.Click += new System.EventHandler(this.tsmMedico_Click);
             // 
             // tsmPaciente
             // 

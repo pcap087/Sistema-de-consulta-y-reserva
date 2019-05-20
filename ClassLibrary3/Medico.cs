@@ -7,14 +7,34 @@ using System.Threading.Tasks;
 namespace ClassLibrary1
 {
     public enum Especialidades { Endocrinologia, Cardiologia, Traumatologia, Clinico, Pediatria, Psiquiatria, Gastroenterologia}
-    public  class Medico : Persona 
+    public class Medico : Persona 
     {
         public Especialidades Especialidades { get; set; }
 
-        public override string ObtenerPresentacionPersonal()
+        public static List<Medico> listaMedicos = new List<Medico>();
+
+        //metodo agregar
+        public static void AgregarMedico(Medico m)
         {
-            return String.Format("Hola mi nombre es {0}, y mi especialidad es {1}", this.ObtenerNombreCompleto(), this.Especialidades);
+            listaMedicos.Add(m);
         }
+
+        //metodo eliminar
+        public static void EliminarMedico(Medico m)
+        {
+            listaMedicos.Remove(m);
+        }
+
+        public static List<Medico> ObtenerMedico()
+        {
+            return listaMedicos;
+        }
+
+        public override string ToString()
+        {
+            return nombre;
+        }
+
     }
 }
 

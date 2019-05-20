@@ -13,10 +13,7 @@ namespace ClassLibrary1
         public string fecha { get; set; }
         public int cantidad_max_paciente { get; set; }
 
-        public string ObtenerDisponibilidad()
-        {
-            return String.Format("El medico {0}, está disponible en el turno: {1}, y la fecha:  {2} , y puede atender hasta {3} pacientes ", this.medico.ObtenerPresentacionPersonal(), this.turno, this.fecha, this.cantidad_max_paciente);
-        }
+       
     }
 
     

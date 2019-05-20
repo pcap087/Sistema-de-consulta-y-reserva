@@ -22,5 +22,11 @@ namespace InterfazConsultaReserva
         {
 
         }
+
+        private void tsmMedico_Click(object sender, EventArgs e)
+        {
+            frmMedico form = new frmMedico();
+            form.Show();
+        }
     }
 }

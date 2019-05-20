@@ -13,10 +13,6 @@ namespace ClassLibrary1
         public string fecha_fin { get; set; }
         public Medico medico { get; set; }
 
-        public string ObtenerVacaciones()
-        {
-            return String.Format("El medico {0}, saldra de vacaciones el: {1}, y volverá el: {2}", this.medico.ObtenerPresentacionPersonal(), this.fecha_inicio, this.fecha_fin);
-
-        }
+       
     }
 }

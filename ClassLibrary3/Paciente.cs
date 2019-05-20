@@ -14,9 +14,6 @@ namespace ClassLibrary1
         public Sexo sexo { get; set; }
         public EstadoCivil estadoc { get; set; }
 
-        public override string ObtenerPresentacionPersonal()
-        {
-            return String.Format("Hola mi nombre es {0}, mi sexo es {1} y mi estado civil es {2}", this.ObtenerNombreCompleto(), this.sexo, this.estadoc);
-        }
+       
     }
 }
