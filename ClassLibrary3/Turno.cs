@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,16 +9,31 @@ namespace ClassLibrary1
 {
     public class Turno
     {
-        public int nro_turno { get; set; }
+        
         public string descripcion { get; set; }
-        public string hora_inicio { get; set; }
-        public string hora_fin { get; set; }
+        public DateTime hora_inicio { get; set; }
+        public DateTime hora_fin { get; set; }
 
+        public static List<Turno> listaTurnos = new List<Turno>();
 
-        public  string ObtenerHorarioMedico()
+        public static void AgregarTurno(Turno t)
         {
-            return String.Format("El turno {0}, tiene hora de inicio {1}, y hora fin; {2} ", this.descripcion, this.hora_inicio, this.hora_fin);
+            listaTurnos.Add(t);
         }
+        public static void EliminarTurno(Turno t)
+        {
+            listaTurnos.Remove(t);
+        }
+        public static List<Turno> ObtenerTurnos()
+        {
+            return listaTurnos;
+        }
+        public override string ToString()
+        {
+            return this.descripcion;
+        }
+
+
 
     }
 
