@@ -20,11 +20,8 @@ namespace InterfazConsultaReserva
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Medico medico = ObtenerMedicoFormulario();
-
             Medico.AgregarMedico(medico);
-
             ActualizarListaMedico();
-
             LimpiarFormulario();
         }
 
