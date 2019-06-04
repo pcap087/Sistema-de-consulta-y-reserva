@@ -41,6 +41,8 @@
             this.tsmPaciente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmFuncionario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTurno = new System.Windows.Forms.ToolStripMenuItem();
+            this.clinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ciudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +91,9 @@
             this.tsmMedico,
             this.tsmPaciente,
             this.tsmFuncionario,
-            this.tsmTurno});
+            this.tsmTurno,
+            this.clinicaToolStripMenuItem,
+            this.ciudadToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -120,6 +124,21 @@
             this.tsmTurno.Name = "tsmTurno";
             this.tsmTurno.Size = new System.Drawing.Size(152, 22);
             this.tsmTurno.Text = "Turno";
+            this.tsmTurno.Click += new System.EventHandler(this.tsmTurno_Click);
+            // 
+            // clinicaToolStripMenuItem
+            // 
+            this.clinicaToolStripMenuItem.Name = "clinicaToolStripMenuItem";
+            this.clinicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clinicaToolStripMenuItem.Text = "Clinica";
+            this.clinicaToolStripMenuItem.Click += new System.EventHandler(this.clinicaToolStripMenuItem_Click);
+            // 
+            // ciudadToolStripMenuItem
+            // 
+            this.ciudadToolStripMenuItem.Name = "ciudadToolStripMenuItem";
+            this.ciudadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ciudadToolStripMenuItem.Text = "Ciudad";
+            this.ciudadToolStripMenuItem.Click += new System.EventHandler(this.ciudadToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -154,6 +173,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmPaciente;
         private System.Windows.Forms.ToolStripMenuItem tsmFuncionario;
         private System.Windows.Forms.ToolStripMenuItem tsmTurno;
+        private System.Windows.Forms.ToolStripMenuItem clinicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ciudadToolStripMenuItem;
     }
 }
 

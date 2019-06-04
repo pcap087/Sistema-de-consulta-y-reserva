@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoReservasConsultas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,24 @@ namespace InterfazConsultaReserva
             frmPaciente form = new frmPaciente();
             form.Show();
 
+        }
+
+        private void tsmTurno_Click(object sender, EventArgs e)
+        {
+            frmTurno form = new frmTurno();
+            form.Show();
+        }
+
+        private void clinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClinica form = new frmClinica();
+            form.Show();
+        }
+
+        private void ciudadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCiudad form = new frmCiudad();
+            form.Show();
         }
     }
 }

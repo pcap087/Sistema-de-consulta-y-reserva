@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCiudad.Designer.cs">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClinica.Designer.cs">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +88,20 @@
     <Compile Include="frmPersona.Designer.cs">
       <DependentUpon>frmPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTurno.Designer.cs">
+      <DependentUpon>frmTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCiudad.resx">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClinica.resx">
+      <DependentUpon>frmClinica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersona.resx">
       <DependentUpon>frmPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTurno.resx">
+      <DependentUpon>frmTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
