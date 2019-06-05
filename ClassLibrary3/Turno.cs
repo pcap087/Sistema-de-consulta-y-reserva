@@ -20,6 +20,7 @@ namespace ClassLibrary1
         {
             listaTurnos.Add(t);
         }
+        //hola
         public static void EliminarTurno(Turno t)
         {
             listaTurnos.Remove(t);
