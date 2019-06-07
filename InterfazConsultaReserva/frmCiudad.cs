@@ -24,7 +24,7 @@ namespace ProyectoReservasConsultas
         {
             Ciudad ciudad = new Ciudad();
 
-            ciudad.nro_ciudad = Convert.ToInt16(txtciudad.Text);
+            ciudad.nro_ciudad = txtciudad.Text;
             ciudad.descripcion = txtDescCiudad.Text;
 
             return ciudad;
@@ -43,20 +43,10 @@ namespace ProyectoReservasConsultas
         }
 
 
-        private void btnAg_Click(object sender, EventArgs e)
-        {
-            Ciudad ciudad = ObtenerCiudadFormulario();
-
-
-            Ciudad.listaCiudades.Add(ciudad);
-            ActualidadListaCiudades();
-            LimpiarFormulario();
-        }
 
         private void frmCiudad_Load(object sender, EventArgs e)
         {
-            txtciudad = null;
-            txtDescCiudad = null;
+           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -70,10 +60,9 @@ namespace ProyectoReservasConsultas
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Ciudad ciudad = (Ciudad)lstCiudad.SelectedItem;
-            Ciudad.EliminarCarne(ciudad);
+            Ciudad.EliminarCiudad(ciudad);
             ActualidadListaCiudades();
             LimpiarFormulario();
-            //cambiosCamilaa
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -95,22 +84,12 @@ namespace ProyectoReservasConsultas
             }
         }
 
-        private void InitializeComponent()
+        private void btnAg_Click_1(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            // 
-            // frmCiudad
-            // 
-            this.ClientSize = new System.Drawing.Size(424, 261);
-            this.Name = "frmCiudad";
-            this.Load += new System.EventHandler(this.frmCiudad_Load_1);
-            this.ResumeLayout(false);
-
-        }
-
-        private void frmCiudad_Load_1(object sender, EventArgs e)
-        {
-
+            Ciudad ciudad = ObtenerCiudadFormulario();
+            Ciudad.AgregarCiudad(ciudad);
+            ActualidadListaCiudades();
+            LimpiarFormulario();
         }
     }
 }

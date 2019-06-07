@@ -52,6 +52,7 @@
             this.lstClinica.Name = "lstClinica";
             this.lstClinica.Size = new System.Drawing.Size(186, 186);
             this.lstClinica.TabIndex = 31;
+            this.lstClinica.Click += new System.EventHandler(this.lstClinica_Click_1);
             // 
             // txtNroClinica
             // 
@@ -75,6 +76,7 @@
             this.btnLimpiar.TabIndex = 27;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // btnEliminar
             // 
@@ -84,6 +86,7 @@
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnEditar
             // 
@@ -93,6 +96,7 @@
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // btnAg
             // 
@@ -102,7 +106,7 @@
             this.btnAg.TabIndex = 24;
             this.btnAg.Text = "Agregar";
             this.btnAg.UseVisualStyleBackColor = true;
-//            this.btnAg.Click += new System.EventHandler(this.btnAg_Click_1);
+            this.btnAg.Click += new System.EventHandler(this.btnAg_Click_1);
             // 
             // label3
             // 

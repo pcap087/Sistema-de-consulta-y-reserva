@@ -91,6 +91,7 @@
             this.btnAg.TabIndex = 22;
             this.btnAg.Text = "Agregar";
             this.btnAg.UseVisualStyleBackColor = true;
+            this.btnAg.Click += new System.EventHandler(this.btnAg_Click_1);
             // 
             // label3
             // 
@@ -119,7 +120,6 @@
             this.lstCiudad.Size = new System.Drawing.Size(166, 134);
             this.lstCiudad.TabIndex = 28;
             this.lstCiudad.Click += new System.EventHandler(this.lstCiudad_Click);
-//            this.lstCiudad.SelectedIndexChanged += new System.EventHandler(this.lstCiudad_SelectedIndexChanged);
             // 
             // frmCiudad
             // 
