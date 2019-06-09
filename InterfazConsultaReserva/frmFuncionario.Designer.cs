@@ -35,12 +35,18 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstFuncionario = new System.Windows.Forms.ListBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // txtId
+            // 
+            this.txtId.ReadOnly = true;
             // 
             // cmbCargo
             // 
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(161, 322);
+            this.cmbCargo.Location = new System.Drawing.Point(164, 359);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(159, 21);
             this.cmbCargo.TabIndex = 21;
@@ -48,7 +54,7 @@
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(55, 325);
+            this.lblCargo.Location = new System.Drawing.Point(65, 362);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(35, 13);
             this.lblCargo.TabIndex = 20;
@@ -56,7 +62,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(375, 435);
+            this.btnLimpiar.Location = new System.Drawing.Point(365, 405);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 28;
@@ -66,7 +72,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(293, 436);
+            this.btnEliminar.Location = new System.Drawing.Point(514, 240);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 27;
@@ -76,7 +82,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(208, 436);
+            this.btnEditar.Location = new System.Drawing.Point(433, 240);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 26;
@@ -86,7 +92,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(127, 436);
+            this.btnAgregar.Location = new System.Drawing.Point(352, 240);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 25;
@@ -99,14 +105,35 @@
             this.lstFuncionario.FormattingEnabled = true;
             this.lstFuncionario.Location = new System.Drawing.Point(343, 31);
             this.lstFuncionario.Name = "lstFuncionario";
-            this.lstFuncionario.Size = new System.Drawing.Size(231, 199);
+            this.lstFuncionario.Size = new System.Drawing.Size(259, 199);
             this.lstFuncionario.TabIndex = 29;
             this.lstFuncionario.Click += new System.EventHandler(this.lstFuncionario_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(286, 405);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 23);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(207, 405);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(73, 23);
+            this.btnGuardar.TabIndex = 33;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(586, 483);
+            this.ClientSize = new System.Drawing.Size(624, 525);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstFuncionario);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -117,6 +144,16 @@
             this.Name = "frmFuncionario";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.frmFuncionario_Load_1);
+            this.Controls.SetChildIndex(this.txtId, 0);
+            this.Controls.SetChildIndex(this.lblCargo, 0);
+            this.Controls.SetChildIndex(this.cmbCargo, 0);
+            this.Controls.SetChildIndex(this.btnAgregar, 0);
+            this.Controls.SetChildIndex(this.btnEditar, 0);
+            this.Controls.SetChildIndex(this.btnEliminar, 0);
+            this.Controls.SetChildIndex(this.btnLimpiar, 0);
+            this.Controls.SetChildIndex(this.lstFuncionario, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.btnGuardar, 0);
             this.Controls.SetChildIndex(this.txtNombre, 0);
             this.Controls.SetChildIndex(this.txtNroDocumento, 0);
             this.Controls.SetChildIndex(this.txtApellido, 0);
@@ -125,13 +162,6 @@
             this.Controls.SetChildIndex(this.txtRuc, 0);
             this.Controls.SetChildIndex(this.txtDireccion, 0);
             this.Controls.SetChildIndex(this.txtEdad, 0);
-            this.Controls.SetChildIndex(this.lblCargo, 0);
-            this.Controls.SetChildIndex(this.cmbCargo, 0);
-            this.Controls.SetChildIndex(this.btnAgregar, 0);
-            this.Controls.SetChildIndex(this.btnEditar, 0);
-            this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.btnLimpiar, 0);
-            this.Controls.SetChildIndex(this.lstFuncionario, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +176,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListBox lstFuncionario;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

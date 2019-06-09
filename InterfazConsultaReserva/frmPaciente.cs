@@ -48,14 +48,14 @@ namespace InterfazConsultaReserva
         {
             Paciente paciente = new Paciente();
 
-            paciente.nro_documento = txtNroDocumento.Text;
+            //paciente.nro_documento = txtNroDocumento.Text;
             paciente.apellido = txtApellido.Text;
             paciente.nombre = txtNombre.Text;
             paciente.direccion = txtDireccion.Text;
             paciente.telefono = txtTelefono.Text;
             paciente.email = txtEmail.Text;
             paciente.ruc = txtRuc.Text;
-            paciente.edad = txtEdad.Text;
+            //paciente.edad = txtEdad.Text;
             paciente.estadoc = (EstadoCivil)cmbEstado.SelectedItem;
             paciente.sexo = (Sexo)cmbSexo.SelectedItem;
             return paciente;
@@ -94,7 +94,7 @@ namespace InterfazConsultaReserva
                 txtTelefono.Text = paciente.telefono;
                 txtEmail.Text = paciente.email;
                 txtRuc.Text = paciente.ruc;
-                txtEdad.Text = paciente.edad;
+                //txtEdad.Text = paciente.edad;
                 cmbEstado.SelectedItem = paciente.estadoc;
                 cmbSexo.SelectedItem = paciente.sexo;
 

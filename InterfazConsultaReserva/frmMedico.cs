@@ -49,14 +49,14 @@ namespace InterfazConsultaReserva
         {
             Medico medico = new Medico();
 
-            medico.nro_documento = txtNroDocumento.Text;
+            medico.nro_documento = Convert.ToInt32(txtNroDocumento.Text);
             medico.apellido = txtApellido.Text;
             medico.nombre = txtNombre.Text;
             medico.direccion = txtDireccion.Text;
             medico.telefono = txtTelefono.Text;
             medico.email = txtEmail.Text;
             medico.ruc = txtRuc.Text;
-            medico.edad = txtEdad.Text;
+            medico.edad = Convert.ToInt32(txtEdad.Text);
             medico.Especialidades = (Especialidades)cmbEspecialidad.SelectedItem;
             return medico;
         }
@@ -101,7 +101,7 @@ namespace InterfazConsultaReserva
                 txtTelefono.Text = medico.telefono;
                 txtEmail.Text = medico.email;
                 txtRuc.Text = medico.ruc;
-                txtEdad.Text = medico.edad;
+                //txtEdad.Text = medico.edad;
                 cmbEspecialidad.SelectedItem = medico.Especialidades;
 
             }

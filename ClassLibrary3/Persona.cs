@@ -8,10 +8,11 @@ namespace ClassLibrary1
 {
     public class Persona
     {
-        public string nro_documento { get; set; }
+        public int id { get; set; }
+        public int nro_documento { get; set; }
         public string nombre { get; set; } //propiedad implementada automáticamente
         public string apellido { get; set; }
-        public string edad { get; set; }
+        public int edad { get; set; }
         public string email { get; set; }
         public string telefono { get; set; }
         public string ruc { get; set; }

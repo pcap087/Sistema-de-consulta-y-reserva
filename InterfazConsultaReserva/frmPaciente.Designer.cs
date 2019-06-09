@@ -137,6 +137,7 @@
             this.Controls.Add(this.lblEstadoCivil);
             this.Name = "frmPaciente";
             this.Load += new System.EventHandler(this.frmPaciente_Load);
+            this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.txtNombre, 0);
             this.Controls.SetChildIndex(this.txtNroDocumento, 0);
             this.Controls.SetChildIndex(this.txtApellido, 0);
