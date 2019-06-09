@@ -1,4 +1,4 @@
-﻿using ClasesCarniceria;
+﻿using ClassLibrary1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
