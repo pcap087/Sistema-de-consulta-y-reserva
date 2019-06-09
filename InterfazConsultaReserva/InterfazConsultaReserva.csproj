@@ -58,11 +58,23 @@
     <Compile Include="frmClinica.Designer.cs">
       <DependentUpon>frmClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearUsuario.Designer.cs">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFuncionario.Designer.cs">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
     <EmbeddedResource Include="frmClinica.resx">
       <DependentUpon>frmClinica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearUsuario.resx">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

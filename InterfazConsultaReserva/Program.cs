@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InterfazConsultaReserva
+namespace InterfazCarniceria
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace InterfazConsultaReserva
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new frmLogin());
         }
     }
 }
