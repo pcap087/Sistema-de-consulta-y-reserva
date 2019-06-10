@@ -144,7 +144,7 @@
             this.Name = "frmFuncionario";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.frmFuncionario_Load_1);
-            this.Controls.SetChildIndex(this.txtId, 0);
+//            this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.lblCargo, 0);
             this.Controls.SetChildIndex(this.cmbCargo, 0);
             this.Controls.SetChildIndex(this.btnAgregar, 0);

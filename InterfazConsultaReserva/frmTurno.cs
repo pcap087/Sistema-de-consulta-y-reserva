@@ -30,8 +30,8 @@ namespace InterfazConsultaReserva
         {
             Turno turno= new Turno();
             turno.descripcion = txtDescripcion.Text;
-            turno.hora_inicio = dtpHoraInicio.Value.Date;
-            turno.hora_fin = dtpHoraFin.Value.Date;
+            turno.hora_inicio = dtpHoraInicio.Value;
+            turno.hora_fin = dtpHoraFin.Value;
             
             return turno;
         }

@@ -127,7 +127,7 @@
             // 
             // btnAgregarTurno
             // 
-            this.btnAgregarTurno.Location = new System.Drawing.Point(15, 166);
+            this.btnAgregarTurno.Location = new System.Drawing.Point(15, 167);
             this.btnAgregarTurno.Name = "btnAgregarTurno";
             this.btnAgregarTurno.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarTurno.TabIndex = 21;
