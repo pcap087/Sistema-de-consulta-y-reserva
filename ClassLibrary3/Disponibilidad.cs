@@ -92,7 +92,7 @@ namespace ClassLibrary1
         }
 
 
-        private string ObtenerStringDiasEntrega()
+        private string ObtenerStringDiasAtencion()
         {
             return string.Join(",", this.dias_atencion);
 
@@ -106,30 +106,15 @@ namespace ClassLibrary1
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean id = false)
         {
 
-            SqlParameter p1 = new SqlParameter("@nombre", this.nombre);
-            SqlParameter p2 = new SqlParameter("@peso", this.peso);
-            SqlParameter p3 = new SqlParameter("@fecha_vencimiento", this.fecha_vencimiento);
-            SqlParameter p4 = new SqlParameter("@precio", this.precio);
-            SqlParameter p5 = new SqlParameter("@categoria", this.categoria);
-            SqlParameter p6 = new SqlParameter("@proveedor", this.proveedor.Id);
-            SqlParameter p7 = new SqlParameter("@tipo_carne", this.tipo_carne);
-            SqlParameter p8 = new SqlParameter("@dias_entrega", this.ObtenerStringDiasEntrega());
+            SqlParameter p1 = new SqlParameter("@nombre", this.medico);
+            SqlParameter p2 = new SqlParameter("@peso", this.turno);
+            SqlParameter p3 = new SqlParameter("@dias_entrega", this.ObtenerStringDiasAtencion());
             p1.SqlDbType = SqlDbType.VarChar;
             p2.SqlDbType = SqlDbType.Float;
             p3.SqlDbType = SqlDbType.DateTime;
-            p4.SqlDbType = SqlDbType.Float;
-            p5.SqlDbType = SqlDbType.Int;
-            p6.SqlDbType = SqlDbType.Int;
-            p7.SqlDbType = SqlDbType.Int;
-            p8.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(p1);
             cmd.Parameters.Add(p2);
             cmd.Parameters.Add(p3);
-            cmd.Parameters.Add(p4);
-            cmd.Parameters.Add(p5);
-            cmd.Parameters.Add(p6);
-            cmd.Parameters.Add(p7);
-            cmd.Parameters.Add(p8);
 
             if (id == true)
             {
@@ -150,10 +135,10 @@ namespace ClassLibrary1
 
 
 
-        public override string ToString()
+        /*public override string ToString()
         {
-            return this.nombre;
-        }
+            return this.turno;
+        }*/
     }
 
     

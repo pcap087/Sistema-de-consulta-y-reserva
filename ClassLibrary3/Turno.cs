@@ -66,23 +66,45 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Turno SET descripcion= @descripcion, hora_inicio= @hora_inicio, hora_fin= @hora_fin where Id = @Id";
+                string textoCmd = @"UPDATE Turno SET descripcion= @descripcion, hora_inicio= @hora_inicio, hora_fin= @hora_fin where id = @id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                SqlParameter p1 = new SqlParameter("@descripcion", t.descripcion);
-                SqlParameter p2 = new SqlParameter("@hora_inicio", t.hora_inicio);
-                SqlParameter p3 = new SqlParameter("@hora_fin", t.hora_fin);
-                
-                SqlParameter p4 = new SqlParameter("@Id", t.id);
-                p1.SqlDbType = SqlDbType.VarChar;
-                p2.SqlDbType = SqlDbType.DateTime;
-                p3.SqlDbType = SqlDbType.DateTime;
-                cmd.Parameters.Add(p1);
-                cmd.Parameters.Add(p2);
-                cmd.Parameters.Add(p3);
+                cmd = t.ObtenerParametros(cmd, true);
 
                 cmd.ExecuteNonQuery();
             }
         }
+
+        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean id = false)
+        {
+
+            SqlParameter p1 = new SqlParameter("@descripcion", this.descripcion);
+            SqlParameter p2 = new SqlParameter("@hora_inicio", this.hora_inicio);
+            SqlParameter p3 = new SqlParameter("@hora_fin", this.hora_fin);
+            
+            p1.SqlDbType = SqlDbType.VarChar;
+            p2.SqlDbType = SqlDbType.DateTime;
+            p3.SqlDbType = SqlDbType.DateTime;
+            
+            cmd.Parameters.Add(p1);
+            cmd.Parameters.Add(p2);
+            cmd.Parameters.Add(p3);
+            
+            if (id == true)
+            {
+                cmd = ObtenerParametroId(cmd);
+            }
+
+            return cmd;
+        }
+        private SqlCommand ObtenerParametroId(SqlCommand cmd)
+        {
+            SqlParameter p4 = new SqlParameter("@id", this.id);
+            p4.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p4);
+
+            return cmd;
+        }
+
 
         public static List<Turno> ObtenerTurnos()
         {
@@ -93,7 +115,7 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * from Turno";
+                string textoCmd = "SELECT  id,descripcion,(SELECT CONVERT(VARCHAR, hora_inicio, 101) + ' ' + CONVERT(VARCHAR, DATEPART(hh, hora_inicio)) + ':' + RIGHT('0' + CONVERT(VARCHAR, DATEPART(mi, hora_inicio)), 2)) AS HoraInicio,(SELECT CONVERT(VARCHAR, hora_fin, 101) + ' ' + CONVERT(VARCHAR, DATEPART(hh, hora_fin)) + ':' + RIGHT('0' + CONVERT(VARCHAR, DATEPART(mi, hora_fin)), 2)) AS HoraFin FROM Turno";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -104,8 +126,8 @@ namespace ClassLibrary1
                     turno = new Turno();
                     turno.id= elLectorDeDatos.GetInt32(0);
                     turno.descripcion = elLectorDeDatos.GetString(1);
-                    turno.hora_inicio= elLectorDeDatos.GetDateTime(2);
-                    turno.hora_fin= elLectorDeDatos.GetDateTime(3);
+                    turno.hora_inicio= Convert.ToDateTime(elLectorDeDatos.GetString(2));
+                    turno.hora_fin = Convert.ToDateTime(elLectorDeDatos.GetString(3));
 
                     listaTurnos.Add(turno);
                 }
