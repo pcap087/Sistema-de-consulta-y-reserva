@@ -15,6 +15,7 @@ namespace InterfazConsultaReserva
         public frmMedico()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
         }
 

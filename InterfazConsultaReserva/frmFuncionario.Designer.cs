@@ -62,7 +62,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(365, 405);
+            this.btnLimpiar.Location = new System.Drawing.Point(368, 425);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 28;
@@ -111,7 +111,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(286, 405);
+            this.btnCancelar.Location = new System.Drawing.Point(289, 425);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(73, 23);
             this.btnCancelar.TabIndex = 32;
@@ -120,7 +120,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(207, 405);
+            this.btnGuardar.Location = new System.Drawing.Point(210, 425);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(73, 23);
             this.btnGuardar.TabIndex = 33;
@@ -131,7 +131,7 @@
             // frmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(624, 525);
+            this.ClientSize = new System.Drawing.Size(625, 473);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstFuncionario);
@@ -144,7 +144,6 @@
             this.Name = "frmFuncionario";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.frmFuncionario_Load_1);
-//            this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.lblCargo, 0);
             this.Controls.SetChildIndex(this.cmbCargo, 0);
             this.Controls.SetChildIndex(this.btnAgregar, 0);
@@ -154,6 +153,7 @@
             this.Controls.SetChildIndex(this.lstFuncionario, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.btnGuardar, 0);
+            this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.txtNombre, 0);
             this.Controls.SetChildIndex(this.txtNroDocumento, 0);
             this.Controls.SetChildIndex(this.txtApellido, 0);
