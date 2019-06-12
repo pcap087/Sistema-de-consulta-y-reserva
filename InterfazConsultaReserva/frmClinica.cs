@@ -14,6 +14,7 @@ namespace ProyectoReservasConsultas
 {
     public partial class frmClinica : Form
     {
+        string modo;
         public frmClinica()
         {
             InitializeComponent();
@@ -23,10 +24,15 @@ namespace ProyectoReservasConsultas
         {
             Clinica clinica = new Clinica();
 
-            clinica.nro_clinica = txtNroClinica.Text;
+            if (!string.IsNullOrWhiteSpace(txtNroClinica.Text))
+            {
+                clinica.id = Convert.ToInt32(txtNroClinica.Text);
+            }
+            
             clinica.descripcion = txtDescripcion.Text;
             clinica.direccion = txtDireccion.Text;
             clinica.ciudad = (Ciudad)cmbCiudad.SelectedItem;
+            clinica.consultorio= (Consultorio)cmbConsultorio.SelectedItem;
             clinica.telefono = (txtTelefono.Text);
             return clinica;
         }
@@ -34,7 +40,7 @@ namespace ProyectoReservasConsultas
         private void ActualidadListaClinica()
         {
             lstClinica.DataSource = null;
-            lstClinica.DataSource = Clinica.ObtenerClinica();
+            lstClinica.DataSource = Clinica.ObtenerClinicas();
         }
 
         private void LimpiarFormulario()
@@ -44,41 +50,56 @@ namespace ProyectoReservasConsultas
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             cmbCiudad.SelectedItem = null;
+            cmbConsultorio.SelectedItem = null;
         }
 
         private void frmClinica_Load(object sender, EventArgs e)
         {
+            Clinica c = new Clinica();
             ActualidadListaClinica();
             cmbCiudad.DataSource = Ciudad.ObtenerCiudades();
             cmbCiudad.SelectedItem = null;
+            cmbConsultorio.DataSource = Consultorio.ObtenerConsultorios();
+            cmbConsultorio.SelectedItem = null;
+            BloquearFormularioClinica();
 
         }
+        private void BloquearFormularioClinica()
+        {
+            txtNroClinica.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtDireccion.Enabled = false;
+            cmbCiudad.Enabled = false;
+            cmbConsultorio.Enabled = false;
+            txtTelefono.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
+        }
+        private void DesbloquearFormularioClinica()
+        {
+            
+            txtDescripcion.Enabled = true;
+            txtDireccion.Enabled = true;
+            cmbCiudad.Enabled = true;
+            cmbConsultorio.Enabled = true;
+            txtTelefono.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
+        }
 
-      
+
         private void btnAg_Click_1(object sender, EventArgs e)
         {
-            Clinica clinica = ObtenerClinicaFormulario();
-
-            Clinica.listaClinica.Add(clinica);
-            ActualidadListaClinica();
+            modo = "I";
             LimpiarFormulario();
+            DesbloquearFormularioClinica();
         }
 
-        private void btnEditar_Click_1(object sender, EventArgs e)
-        {
-            int index = lstClinica.SelectedIndex;
-            Clinica.listaClinica[index] = ObtenerClinicaFormulario();
+        
 
-            ActualidadListaClinica();
-        }
-
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-            Clinica clinica = (Clinica)lstClinica.SelectedItem;
-            Clinica.EliminarClinica(clinica);
-            ActualidadListaClinica();
-            LimpiarFormulario();
-        }
+        
 
         private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
@@ -91,13 +112,32 @@ namespace ProyectoReservasConsultas
 
             if (clinica != null)
             {
-                txtNroClinica.Text = clinica.nro_clinica;
+                txtNroClinica.Text = Convert.ToString(clinica.id); ;
                 txtDescripcion.Text = clinica.descripcion;
                 txtDireccion.Text = clinica.direccion;
+                cmbCiudad.SelectedItem = (Ciudad)Ciudad.ObtenerCiudad(clinica.ciudad.id);
+                cmbConsultorio.SelectedItem = (Consultorio)Consultorio.ObtenerConsultorio(clinica.consultorio.id);
                 txtTelefono.Text = clinica.telefono;
-                cmbCiudad.SelectedItem = clinica.ciudad;
-
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (modo == "I")
+            {
+                Clinica clinica= ObtenerClinicaFormulario();
+
+                Clinica.AgregarClinica(clinica);
+            }
+            ActualidadListaClinica();
+            LimpiarFormulario();
+            BloquearFormularioClinica();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+            BloquearFormularioClinica();
         }
     }
 }

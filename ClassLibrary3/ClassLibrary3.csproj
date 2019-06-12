@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cita.cs" />
     <Compile Include="Ciudad.cs" />
     <Compile Include="Clinica.cs" />
     <Compile Include="Consultorio.cs" />

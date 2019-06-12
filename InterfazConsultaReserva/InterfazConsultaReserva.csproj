@@ -58,6 +58,12 @@
     <Compile Include="frmClinica.Designer.cs">
       <DependentUpon>frmClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultorio.Designer.cs">
+      <DependentUpon>frmConsultorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClinica.resx">
       <DependentUpon>frmClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultorio.resx">
+      <DependentUpon>frmConsultorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearUsuario.resx">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>

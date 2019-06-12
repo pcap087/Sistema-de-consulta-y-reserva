@@ -32,8 +32,6 @@
             this.txtNroClinica = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnAg = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +41,10 @@
             this.cmbCiudad = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cmbConsultorio = new System.Windows.Forms.ComboBox();
+            this.lblConsultorio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstClinica
@@ -70,7 +72,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(358, 256);
+            this.btnLimpiar.Location = new System.Drawing.Point(510, 281);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 27;
@@ -78,29 +80,9 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(258, 256);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(158, 256);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 25;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
-            // 
             // btnAg
             // 
-            this.btnAg.Location = new System.Drawing.Point(68, 256);
+            this.btnAg.Location = new System.Drawing.Point(66, 281);
             this.btnAg.Name = "btnAg";
             this.btnAg.Size = new System.Drawing.Size(75, 23);
             this.btnAg.TabIndex = 24;
@@ -140,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(39, 209);
+            this.label4.Location = new System.Drawing.Point(39, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 32;
@@ -148,7 +130,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(174, 209);
+            this.txtTelefono.Location = new System.Drawing.Point(174, 252);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(159, 20);
             this.txtTelefono.TabIndex = 33;
@@ -177,11 +159,53 @@
             this.txtDescripcion.Size = new System.Drawing.Size(159, 20);
             this.txtDescripcion.TabIndex = 36;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(431, 281);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 23);
+            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(352, 281);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(73, 23);
+            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // cmbConsultorio
+            // 
+            this.cmbConsultorio.FormattingEnabled = true;
+            this.cmbConsultorio.Location = new System.Drawing.Point(174, 213);
+            this.cmbConsultorio.Name = "cmbConsultorio";
+            this.cmbConsultorio.Size = new System.Drawing.Size(159, 21);
+            this.cmbConsultorio.TabIndex = 40;
+            // 
+            // lblConsultorio
+            // 
+            this.lblConsultorio.AutoSize = true;
+            this.lblConsultorio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblConsultorio.Location = new System.Drawing.Point(39, 213);
+            this.lblConsultorio.Name = "lblConsultorio";
+            this.lblConsultorio.Size = new System.Drawing.Size(59, 13);
+            this.lblConsultorio.TabIndex = 39;
+            this.lblConsultorio.Text = "Consultorio";
+            // 
             // frmClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 316);
+            this.ClientSize = new System.Drawing.Size(647, 316);
+            this.Controls.Add(this.cmbConsultorio);
+            this.Controls.Add(this.lblConsultorio);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbCiudad);
@@ -191,8 +215,6 @@
             this.Controls.Add(this.txtNroClinica);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,8 +233,6 @@
         private System.Windows.Forms.TextBox txtNroClinica;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAg;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -222,5 +242,9 @@
         private System.Windows.Forms.ComboBox cmbCiudad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cmbConsultorio;
+        private System.Windows.Forms.Label lblConsultorio;
     }
 }

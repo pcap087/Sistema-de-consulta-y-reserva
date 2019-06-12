@@ -13,6 +13,7 @@ namespace ProyectoReservasConsultas
 {
     public partial class frmCiudad : Form
     {
+        string modo;
         public frmCiudad()
         {
             
@@ -24,7 +25,10 @@ namespace ProyectoReservasConsultas
         {
             Ciudad ciudad = new Ciudad();
 
-            ciudad.nro_ciudad = txtciudad.Text;
+            if (!string.IsNullOrWhiteSpace(txtciudad.Text))
+            {
+                ciudad.id = Convert.ToInt32(txtciudad.Text);
+            }
             ciudad.descripcion = txtDescCiudad.Text;
 
             return ciudad;
@@ -46,25 +50,38 @@ namespace ProyectoReservasConsultas
 
         private void frmCiudad_Load(object sender, EventArgs e)
         {
-           
-        }
+            Ciudad c = new Ciudad();
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            int index = lstCiudad.SelectedIndex;
-            Ciudad.listaCiudades[index] = ObtenerCiudadFormulario();
 
             ActualidadListaCiudades();
-        }
+            
+            BloquearFormularioCiudad();
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        }
+        private void DesbloquearFormularioCiudad()
         {
-            Ciudad ciudad = (Ciudad)lstCiudad.SelectedItem;
-            Ciudad.EliminarCiudad(ciudad);
-            ActualidadListaCiudades();
-            LimpiarFormulario();
+            
+            txtDescCiudad.Enabled = true;
+            
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
+
+        }
+        private void BloquearFormularioCiudad()
+        {
+            txtciudad.Enabled = false;
+            txtDescCiudad.Enabled = false;
+
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
+
         }
 
+        
+
+        
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
@@ -78,7 +95,7 @@ namespace ProyectoReservasConsultas
 
             if (ciudad != null)
             {
-                txtciudad.Text = Convert.ToString(ciudad.nro_ciudad);
+                txtciudad.Text = Convert.ToString(ciudad.id);
                 txtDescCiudad.Text = ciudad.descripcion;
                
             }
@@ -86,10 +103,28 @@ namespace ProyectoReservasConsultas
 
         private void btnAg_Click_1(object sender, EventArgs e)
         {
-            Ciudad ciudad = ObtenerCiudadFormulario();
-            Ciudad.AgregarCiudad(ciudad);
+            modo = "I";
+            LimpiarFormulario();
+            DesbloquearFormularioCiudad();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (modo == "I")
+            {
+                Ciudad ciudad= ObtenerCiudadFormulario();
+
+                Ciudad.AgregarCiudad(ciudad);
+            }
             ActualidadListaCiudades();
             LimpiarFormulario();
+            BloquearFormularioCiudad();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+            BloquearFormularioCiudad();
         }
     }
 }

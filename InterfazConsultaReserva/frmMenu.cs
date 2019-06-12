@@ -60,5 +60,11 @@ namespace InterfazConsultaReserva
             frmCiudad form = new frmCiudad();
             form.Show();
         }
+
+        private void consultorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultorio form = new frmConsultorio();
+            form.Show();
+        }
     }
 }
