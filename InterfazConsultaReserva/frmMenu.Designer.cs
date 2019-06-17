@@ -45,6 +45,7 @@
             this.ciudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disponibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReserva = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +98,8 @@
             this.clinicaToolStripMenuItem,
             this.ciudadToolStripMenuItem,
             this.consultorioToolStripMenuItem,
-            this.disponibilidadToolStripMenuItem});
+            this.disponibilidadToolStripMenuItem,
+            this.tsmReserva});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -158,6 +160,13 @@
             this.disponibilidadToolStripMenuItem.Text = "Disponibilidad";
             this.disponibilidadToolStripMenuItem.Click += new System.EventHandler(this.disponibilidadToolStripMenuItem_Click);
             // 
+            // tsmReserva
+            // 
+            this.tsmReserva.Name = "tsmReserva";
+            this.tsmReserva.Size = new System.Drawing.Size(180, 22);
+            this.tsmReserva.Text = "Reserva";
+            this.tsmReserva.Click += new System.EventHandler(this.tsmReserva_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +204,7 @@
         private System.Windows.Forms.ToolStripMenuItem ciudadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disponibilidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmReserva;
     }
 }
 

@@ -66,6 +66,23 @@ namespace ClassLibrary1
                 cmd.ExecuteNonQuery();
             }
         }
+        public static Paciente ObtenerPacienteParametro(int id)
+        {
+            Paciente paciente= null;
+
+            if (listaPacientes.Count == 0) Paciente.ObtenerPaciente();
+
+            foreach (Paciente p in listaPacientes)
+            {
+                if (p.id== id)
+                {
+                    paciente= p;
+                    break;
+                }
+
+            }
+            return paciente;
+        }
 
         public static List<Paciente> ObtenerPaciente()
         {

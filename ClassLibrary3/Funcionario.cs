@@ -63,6 +63,24 @@ namespace ClassLibrary1
             }
         }
 
+        public static Funcionario ObtenerFuncionarioParametro(int id)
+        {
+            Funcionario funcionario= null;
+
+            if (listaFuncionarios.Count == 0) Funcionario.ObtenerFuncionario();
+
+            foreach (Funcionario f in listaFuncionarios)
+            {
+                if (f.id== id)
+                {
+                    funcionario= f;
+                    break;
+                }
+
+            }
+            return funcionario;
+        }
+
         public static List<Funcionario> ObtenerFuncionario()
         {
             Funcionario funcionario;
@@ -79,7 +97,6 @@ namespace ClassLibrary1
 
                 while (elLectorDeDatos.Read())
                 {
-                    //nombre, peso, fecha_vencimiento, precio,categoria,proveedor,tipo_carne,dias_entrega
                     funcionario = new Funcionario();
                     funcionario.id = elLectorDeDatos.GetInt32(0);
                     funcionario.nro_documento = elLectorDeDatos.GetInt32(1);

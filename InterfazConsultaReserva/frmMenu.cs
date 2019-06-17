@@ -72,5 +72,11 @@ namespace InterfazConsultaReserva
             frmDisponibilidad form = new frmDisponibilidad();
             form.Show();
         }
+
+        private void tsmReserva_Click(object sender, EventArgs e)
+        {
+            frmReserva form = new frmReserva();
+            form.Show();
+        }
     }
 }
