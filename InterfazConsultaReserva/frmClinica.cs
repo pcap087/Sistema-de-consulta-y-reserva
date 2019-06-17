@@ -18,6 +18,7 @@ namespace ProyectoReservasConsultas
         public frmClinica()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private Clinica ObtenerClinicaFormulario()

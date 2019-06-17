@@ -39,6 +39,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMedico = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId
@@ -48,7 +51,7 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(160, 353);
+            this.cmbEstado.Location = new System.Drawing.Point(152, 426);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(159, 21);
             this.cmbEstado.TabIndex = 21;
@@ -56,7 +59,7 @@
             // lblEstadoCivil
             // 
             this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(46, 353);
+            this.lblEstadoCivil.Location = new System.Drawing.Point(56, 395);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
             this.lblEstadoCivil.Size = new System.Drawing.Size(62, 13);
             this.lblEstadoCivil.TabIndex = 20;
@@ -65,7 +68,7 @@
             // cmbSexo
             // 
             this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(160, 387);
+            this.cmbSexo.Location = new System.Drawing.Point(152, 392);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(159, 21);
             this.cmbSexo.TabIndex = 23;
@@ -73,7 +76,7 @@
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(77, 387);
+            this.lblSexo.Location = new System.Drawing.Point(69, 429);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 22;
@@ -81,18 +84,20 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(363, 440);
+            this.btnLimpiar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_clean;
+            this.btnLimpiar.Location = new System.Drawing.Point(383, 468);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 33);
             this.btnLimpiar.TabIndex = 28;
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lstPaciente
             // 
             this.lstPaciente.FormattingEnabled = true;
-            this.lstPaciente.Location = new System.Drawing.Point(343, 27);
+            this.lstPaciente.Location = new System.Drawing.Point(411, 70);
             this.lstPaciente.Name = "lstPaciente";
             this.lstPaciente.Size = new System.Drawing.Size(258, 199);
             this.lstPaciente.TabIndex = 29;
@@ -100,58 +105,93 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(514, 232);
+            this.btnEliminar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_Remove;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Location = new System.Drawing.Point(582, 275);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 31);
             this.btnEliminar.TabIndex = 32;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(433, 232);
+            this.btnEditar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_Edit;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.Location = new System.Drawing.Point(501, 275);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(75, 31);
             this.btnEditar.TabIndex = 31;
             this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(352, 232);
+            this.btnAgregar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_add;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.Location = new System.Drawing.Point(420, 275);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 31);
             this.btnAgregar.TabIndex = 30;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(205, 440);
+            this.btnGuardar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_Save;
+            this.btnGuardar.Location = new System.Drawing.Point(225, 468);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(73, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(73, 33);
             this.btnGuardar.TabIndex = 35;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(284, 440);
+            this.btnCancelar.Image = global::InterfazConsultaReserva.Properties.Resources.iconfinder_cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(304, 468);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(73, 33);
             this.btnCancelar.TabIndex = 34;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblMedico);
+            this.panel1.Location = new System.Drawing.Point(49, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(615, 48);
+            this.panel1.TabIndex = 38;
+            // 
+            // lblMedico
+            // 
+            this.lblMedico.AutoSize = true;
+            this.lblMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedico.Location = new System.Drawing.Point(262, 9);
+            this.lblMedico.Name = "lblMedico";
+            this.lblMedico.Size = new System.Drawing.Size(96, 25);
+            this.lblMedico.TabIndex = 38;
+            this.lblMedico.Text = "Paciente";
             // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(626, 475);
+            this.BackgroundImage = global::InterfazConsultaReserva.Properties.Resources.image;
+            this.ClientSize = new System.Drawing.Size(692, 513);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
@@ -185,6 +225,9 @@
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.btnGuardar, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +246,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblMedico;
     }
 }

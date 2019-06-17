@@ -16,6 +16,7 @@ namespace InterfazCarniceria
         public frmCrearUsuario()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnCrear_Click(object sender, EventArgs e)

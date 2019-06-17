@@ -17,6 +17,7 @@ namespace InterfazConsultaReserva
         public frmReserva()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void frmReserva_Load(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace InterfazConsultaReserva
         public frmPaciente()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

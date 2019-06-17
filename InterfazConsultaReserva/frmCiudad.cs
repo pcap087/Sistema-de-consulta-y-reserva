@@ -18,6 +18,7 @@ namespace ProyectoReservasConsultas
         {
             
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
 
