@@ -16,6 +16,7 @@ namespace ClassLibrary1
         public Clinica clinica { get; set; }
 
         public static List<Consultorio> listaConsultorios= new List<Consultorio>();
+
         public static Consultorio ObtenerConsultorio(int id)
         {
             Consultorio consultorio= null;
