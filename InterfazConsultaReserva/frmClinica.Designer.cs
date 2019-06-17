@@ -43,8 +43,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cmbConsultorio = new System.Windows.Forms.ComboBox();
-            this.lblConsultorio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstClinica
@@ -122,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(39, 252);
+            this.label4.Location = new System.Drawing.Point(39, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 32;
@@ -130,7 +128,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(174, 252);
+            this.txtTelefono.Location = new System.Drawing.Point(174, 210);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(159, 20);
             this.txtTelefono.TabIndex = 33;
@@ -179,31 +177,11 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // cmbConsultorio
-            // 
-            this.cmbConsultorio.FormattingEnabled = true;
-            this.cmbConsultorio.Location = new System.Drawing.Point(174, 213);
-            this.cmbConsultorio.Name = "cmbConsultorio";
-            this.cmbConsultorio.Size = new System.Drawing.Size(159, 21);
-            this.cmbConsultorio.TabIndex = 40;
-            // 
-            // lblConsultorio
-            // 
-            this.lblConsultorio.AutoSize = true;
-            this.lblConsultorio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblConsultorio.Location = new System.Drawing.Point(39, 213);
-            this.lblConsultorio.Name = "lblConsultorio";
-            this.lblConsultorio.Size = new System.Drawing.Size(59, 13);
-            this.lblConsultorio.TabIndex = 39;
-            this.lblConsultorio.Text = "Consultorio";
-            // 
             // frmClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 316);
-            this.Controls.Add(this.cmbConsultorio);
-            this.Controls.Add(this.lblConsultorio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
@@ -244,7 +222,5 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox cmbConsultorio;
-        private System.Windows.Forms.Label lblConsultorio;
     }
 }

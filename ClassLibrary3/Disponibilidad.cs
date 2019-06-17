@@ -16,7 +16,7 @@ namespace ClassLibrary1
         public Turno turno { get; set; }
         public List<string> dias_atencion { get; set; }
 
-        public static List<Disponibilidad> listaDisponibilidad = new List<Disponibilidad>();
+        public static List<Disponibilidad> listaDisponibilidades = new List<Disponibilidad>();
 
         public static void AgregarDisponibilidad(Disponibilidad dis)
         {
@@ -60,11 +60,11 @@ namespace ClassLibrary1
             }
         }
 
-        public static List<Disponibilidad> ObtenerDisponibildad()
+        public static List<Disponibilidad> ObtenerDisponibildades()
         {
 
             Disponibilidad dis;
-            listaDisponibilidad.Clear();
+            listaDisponibilidades.Clear();
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
@@ -77,18 +77,18 @@ namespace ClassLibrary1
 
                 while (elLectorDeDatos.Read())
                 {
-                    //nombre, peso, fecha_vencimiento, precio,categoria,proveedor,tipo_carne,dias_entrega
+                    
                     dis = new Disponibilidad();
                     dis.id = elLectorDeDatos.GetInt32(0);
-                    dis.medico = Medico.ObtenerMedico(elLectorDeDatos.GetInt32(1));
+                    dis.medico = Medico.ObtenerMed(elLectorDeDatos.GetInt32(1));
                     dis.turno = Turno.ObtenerTurno(elLectorDeDatos.GetInt32(2));
-                    dis.dias_atencion=ObtenerListaDiasAtencion(elLectorDeDatos.GetString(8));
+                    dis.dias_atencion=ObtenerListaDiasAtencion(elLectorDeDatos.GetString(3));
 
 
-                    listaDisponibilidad.Add(dis);
+                    listaDisponibilidades.Add(dis);
                 }
             }
-            return listaDisponibilidad;
+            return listaDisponibilidades;
         }
 
 
@@ -106,12 +106,12 @@ namespace ClassLibrary1
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean id = false)
         {
 
-            SqlParameter p1 = new SqlParameter("@nombre", this.medico);
-            SqlParameter p2 = new SqlParameter("@peso", this.turno);
-            SqlParameter p3 = new SqlParameter("@dias_entrega", this.ObtenerStringDiasAtencion());
+            SqlParameter p1 = new SqlParameter("@medico", this.medico.id);
+            SqlParameter p2 = new SqlParameter("@turno", this.turno.id);
+            SqlParameter p3 = new SqlParameter("@dias_atencion", this.ObtenerStringDiasAtencion());
             p1.SqlDbType = SqlDbType.VarChar;
             p2.SqlDbType = SqlDbType.Float;
-            p3.SqlDbType = SqlDbType.DateTime;
+            p3.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(p1);
             cmd.Parameters.Add(p2);
             cmd.Parameters.Add(p3);
@@ -135,10 +135,10 @@ namespace ClassLibrary1
 
 
 
-        /*public override string ToString()
+        public override string ToString()
         {
-            return this.turno;
-        }*/
+            return Convert.ToString(this.id);
+        }
     }
 
     

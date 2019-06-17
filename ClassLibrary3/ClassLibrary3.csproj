@@ -45,6 +45,7 @@
     <Compile Include="Ciudad.cs" />
     <Compile Include="Clinica.cs" />
     <Compile Include="Consultorio.cs" />
+    <Compile Include="Disponibilidad.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Medico.cs" />
     <Compile Include="Paciente.cs" />

@@ -37,6 +37,8 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
+            this.cmbClinica = new System.Windows.Forms.ComboBox();
+            this.lblClinica = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -121,11 +123,30 @@
             this.lblDescripcion.TabIndex = 27;
             this.lblDescripcion.Text = "Descripcion";
             // 
+            // cmbClinica
+            // 
+            this.cmbClinica.FormattingEnabled = true;
+            this.cmbClinica.Location = new System.Drawing.Point(563, 110);
+            this.cmbClinica.Name = "cmbClinica";
+            this.cmbClinica.Size = new System.Drawing.Size(121, 21);
+            this.cmbClinica.TabIndex = 32;
+            // 
+            // lblClinica
+            // 
+            this.lblClinica.AutoSize = true;
+            this.lblClinica.Location = new System.Drawing.Point(419, 108);
+            this.lblClinica.Name = "lblClinica";
+            this.lblClinica.Size = new System.Drawing.Size(38, 13);
+            this.lblClinica.TabIndex = 31;
+            this.lblClinica.Text = "Clinica";
+            // 
             // frmConsultorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbClinica);
+            this.Controls.Add(this.lblClinica);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtDescripcion);
@@ -153,5 +174,7 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.ComboBox cmbClinica;
+        private System.Windows.Forms.Label lblClinica;
     }
 }

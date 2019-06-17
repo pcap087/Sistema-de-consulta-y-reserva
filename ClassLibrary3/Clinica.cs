@@ -14,7 +14,6 @@ namespace ClassLibrary1
         public string descripcion { get; set; }
         public string direccion { get; set; }
         public Ciudad ciudad { get; set; }
-        public Consultorio consultorio { get; set; }
         public string telefono { get; set; }
 
         public static List<Clinica> listaClinicas= new List<Clinica>();
@@ -26,7 +25,7 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"insert into Clinica (descripcion, direccion, ciudad,consultorio, telefono) VALUES (@descripcion, @direccion, @ciudad,@consultorio, @telefono)";
+                string textoCmd = @"insert into Clinica (descripcion, direccion, ciudad, telefono) VALUES (@descripcion, @direccion, @ciudad, @telefono)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = c.ObtenerParametros(cmd, false);
 
@@ -62,8 +61,7 @@ namespace ClassLibrary1
                     clinica.descripcion = elLectorDeDatos.GetString(1);
                     clinica.direccion = elLectorDeDatos.GetString(2);
                     clinica.ciudad= Ciudad.ObtenerCiudad(elLectorDeDatos.GetInt32(3));
-                    clinica.consultorio = Consultorio.ObtenerConsultorio(elLectorDeDatos.GetInt32(4));
-                    clinica.telefono = elLectorDeDatos.GetString(5);
+                    clinica.telefono = elLectorDeDatos.GetString(4);
                     listaClinicas.Add(clinica);
                 }
             }
@@ -78,19 +76,16 @@ namespace ClassLibrary1
             SqlParameter p1 = new SqlParameter("@descripcion", this.descripcion);
             SqlParameter p2 = new SqlParameter("@direccion", this.direccion);
             SqlParameter p3 = new SqlParameter("@ciudad", this.ciudad.id);
-            SqlParameter p4 = new SqlParameter("@consultorio", this.consultorio.id);
-            SqlParameter p5 = new SqlParameter("@telefono", this.telefono);
+            SqlParameter p4 = new SqlParameter("@telefono", this.telefono);
 
             p1.SqlDbType = SqlDbType.VarChar;
             p2.SqlDbType = SqlDbType.VarChar;
             p3.SqlDbType = SqlDbType.Int;
-            p4.SqlDbType = SqlDbType.Int;
-            p5.SqlDbType = SqlDbType.VarChar;
+            p4.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(p1);
             cmd.Parameters.Add(p2);
             cmd.Parameters.Add(p3);
             cmd.Parameters.Add(p4);
-            cmd.Parameters.Add(p5);
             if (id == true)
             {
                 cmd = ObtenerParametroId(cmd);
@@ -101,9 +96,9 @@ namespace ClassLibrary1
 
         private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
-            SqlParameter p6 = new SqlParameter("@id", this.id);
-            p6.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p6);
+            SqlParameter p5 = new SqlParameter("@id", this.id);
+            p5.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p5);
 
             return cmd;
         }

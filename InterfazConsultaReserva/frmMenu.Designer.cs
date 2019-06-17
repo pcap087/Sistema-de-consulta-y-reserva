@@ -44,6 +44,7 @@
             this.clinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ciudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disponibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +96,8 @@
             this.tsmTurno,
             this.clinicaToolStripMenuItem,
             this.ciudadToolStripMenuItem,
-            this.consultorioToolStripMenuItem});
+            this.consultorioToolStripMenuItem,
+            this.disponibilidadToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -149,6 +151,13 @@
             this.consultorioToolStripMenuItem.Text = "Consultorio";
             this.consultorioToolStripMenuItem.Click += new System.EventHandler(this.consultorioToolStripMenuItem_Click);
             // 
+            // disponibilidadToolStripMenuItem
+            // 
+            this.disponibilidadToolStripMenuItem.Name = "disponibilidadToolStripMenuItem";
+            this.disponibilidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.disponibilidadToolStripMenuItem.Text = "Disponibilidad";
+            this.disponibilidadToolStripMenuItem.Click += new System.EventHandler(this.disponibilidadToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +194,7 @@
         private System.Windows.Forms.ToolStripMenuItem clinicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ciudadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultorioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disponibilidadToolStripMenuItem;
     }
 }
 

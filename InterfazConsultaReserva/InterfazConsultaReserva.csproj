@@ -70,6 +70,12 @@
     <Compile Include="frmCrearUsuario.Designer.cs">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDisponibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisponibilidad.Designer.cs">
+      <DependentUpon>frmDisponibilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearUsuario.resx">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisponibilidad.resx">
+      <DependentUpon>frmDisponibilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>

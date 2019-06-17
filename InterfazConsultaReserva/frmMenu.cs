@@ -66,5 +66,11 @@ namespace InterfazConsultaReserva
             frmConsultorio form = new frmConsultorio();
             form.Show();
         }
+
+        private void disponibilidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDisponibilidad form = new frmDisponibilidad();
+            form.Show();
+        }
     }
 }

@@ -97,6 +97,23 @@ namespace ClassLibrary1
             }
             return listaMedicos;
         }
+        public static Medico ObtenerMed(int id)
+        {
+            Medico medico= null;
+
+            if (listaMedicos.Count == 0) Medico.ObtenerMedico();
+
+            foreach (Medico m in listaMedicos)
+            {
+                if (m.id== id)
+                {
+                    medico = m;
+                    break;
+                }
+
+            }
+            return medico;
+        }
 
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean id = false)
         {

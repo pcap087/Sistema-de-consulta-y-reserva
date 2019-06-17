@@ -37,8 +37,6 @@
             this.clbDias = new System.Windows.Forms.CheckedListBox();
             this.lblDias = new System.Windows.Forms.Label();
             this.lstDisponibilidad = new System.Windows.Forms.ListBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -130,24 +128,7 @@
             this.lstDisponibilidad.Name = "lstDisponibilidad";
             this.lstDisponibilidad.Size = new System.Drawing.Size(237, 212);
             this.lstDisponibilidad.TabIndex = 34;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(174, 248);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(73, 23);
-            this.btnEliminar.TabIndex = 37;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(93, 248);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 36;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.lstDisponibilidad.Click += new System.EventHandler(this.lstDisponibilidad_Click);
             // 
             // btnAgregar
             // 
@@ -167,6 +148,7 @@
             this.btnCancelar.TabIndex = 40;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -176,6 +158,7 @@
             this.btnGuardar.TabIndex = 39;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
@@ -185,6 +168,7 @@
             this.btnLimpiar.TabIndex = 38;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // frmDisponibilidad
             // 
@@ -194,8 +178,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lstDisponibilidad);
             this.Controls.Add(this.clbDias);
@@ -208,7 +190,7 @@
             this.Controls.Add(this.lblNombre);
             this.Name = "frmDisponibilidad";
             this.Text = "frmDisponibilidad";
-            this.Load += new System.EventHandler(this.Disponibilidad_Load);
+            this.Load += new System.EventHandler(this.frmDisponibilidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,8 +207,6 @@
         private System.Windows.Forms.CheckedListBox clbDias;
         private System.Windows.Forms.Label lblDias;
         private System.Windows.Forms.ListBox lstDisponibilidad;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;

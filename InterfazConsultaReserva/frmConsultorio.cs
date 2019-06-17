@@ -27,7 +27,8 @@ namespace InterfazConsultaReserva
         private void frmConsultorio_Load(object sender, EventArgs e)
         {
             Consultorio c = new Consultorio();
-
+            cmbClinica.DataSource = Clinica.ObtenerClinicas();
+            cmbClinica.SelectedItem = null;
 
             ActualizarListaConsultorios();
 
@@ -37,6 +38,7 @@ namespace InterfazConsultaReserva
         private void BloquearFormulario()
         {
             txtId.Enabled = false;
+            cmbClinica.Enabled = false;
             txtDescripcion.Enabled = false;
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
@@ -46,6 +48,7 @@ namespace InterfazConsultaReserva
         private void DesbloquearFormulario()
         {
             txtDescripcion.Enabled = true;
+            cmbClinica.Enabled = true;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
             btnLimpiar.Enabled = true;
@@ -66,6 +69,7 @@ namespace InterfazConsultaReserva
             }
 
             consultorio.descripcion = txtDescripcion.Text;
+            consultorio.clinica = (Clinica)cmbClinica.SelectedItem;
             return consultorio;
         }
 
@@ -80,23 +84,10 @@ namespace InterfazConsultaReserva
         {
             txtId.Text = "";
             txtDescripcion.Text = "";
+            cmbClinica.SelectedItem = null;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Consultorio consultorio = (Consultorio)lstConsultorio.SelectedItem;
-
-            if (consultorio != null)
-            {
-                modo = "E";
-                DesbloquearFormulario();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un item de la lista");
-            }
-        }
-
+        
         private void lstConsultorio_Click(object sender, EventArgs e)
         {
             Consultorio consultorio = (Consultorio)lstConsultorio.SelectedItem;
@@ -105,6 +96,7 @@ namespace InterfazConsultaReserva
             {
                 txtId.Text = Convert.ToString(consultorio.id);
                 txtDescripcion.Text = consultorio.descripcion;
+                cmbClinica.SelectedItem = (Clinica)Clinica.ObtenerClinica(consultorio.clinica.id);
 
             }
         }

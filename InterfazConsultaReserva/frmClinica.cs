@@ -32,7 +32,7 @@ namespace ProyectoReservasConsultas
             clinica.descripcion = txtDescripcion.Text;
             clinica.direccion = txtDireccion.Text;
             clinica.ciudad = (Ciudad)cmbCiudad.SelectedItem;
-            clinica.consultorio= (Consultorio)cmbConsultorio.SelectedItem;
+            
             clinica.telefono = (txtTelefono.Text);
             return clinica;
         }
@@ -50,7 +50,7 @@ namespace ProyectoReservasConsultas
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             cmbCiudad.SelectedItem = null;
-            cmbConsultorio.SelectedItem = null;
+            
         }
 
         private void frmClinica_Load(object sender, EventArgs e)
@@ -59,8 +59,6 @@ namespace ProyectoReservasConsultas
             ActualidadListaClinica();
             cmbCiudad.DataSource = Ciudad.ObtenerCiudades();
             cmbCiudad.SelectedItem = null;
-            cmbConsultorio.DataSource = Consultorio.ObtenerConsultorios();
-            cmbConsultorio.SelectedItem = null;
             BloquearFormularioClinica();
 
         }
@@ -70,7 +68,7 @@ namespace ProyectoReservasConsultas
             txtDescripcion.Enabled = false;
             txtDireccion.Enabled = false;
             cmbCiudad.Enabled = false;
-            cmbConsultorio.Enabled = false;
+            
             txtTelefono.Enabled = false;
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
@@ -82,7 +80,7 @@ namespace ProyectoReservasConsultas
             txtDescripcion.Enabled = true;
             txtDireccion.Enabled = true;
             cmbCiudad.Enabled = true;
-            cmbConsultorio.Enabled = true;
+            
             txtTelefono.Enabled = true;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -116,7 +114,7 @@ namespace ProyectoReservasConsultas
                 txtDescripcion.Text = clinica.descripcion;
                 txtDireccion.Text = clinica.direccion;
                 cmbCiudad.SelectedItem = (Ciudad)Ciudad.ObtenerCiudad(clinica.ciudad.id);
-                cmbConsultorio.SelectedItem = (Consultorio)Consultorio.ObtenerConsultorio(clinica.consultorio.id);
+            
                 txtTelefono.Text = clinica.telefono;
             }
         }

@@ -13,6 +13,7 @@ namespace ClassLibrary1
 
         public int id { get; set; }
         public string descripcion { get; set; }
+        public Clinica clinica { get; set; }
 
         public static List<Consultorio> listaConsultorios= new List<Consultorio>();
         public static Consultorio ObtenerConsultorio(int id)
@@ -40,7 +41,7 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"insert into Consultorio (descripcion) VALUES (@descripcion)";
+                string textoCmd = @"insert into Consultorio (descripcion,clinica) VALUES (@descripcion,@clinica)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = c.ObtenerParametros(cmd, false);
 
@@ -73,6 +74,7 @@ namespace ClassLibrary1
                     consultorio= new Consultorio();
                     consultorio.id= elLectorDeDatos.GetInt32(0);
                     consultorio.descripcion= elLectorDeDatos.GetString(1);
+                    consultorio.clinica=Clinica.ObtenerClinica(elLectorDeDatos.GetInt32(2));
                     listaConsultorios.Add(consultorio);
                 }
             }
@@ -86,13 +88,14 @@ namespace ClassLibrary1
         {
 
             SqlParameter p1 = new SqlParameter("@descripcion", this.descripcion);
-            
+            SqlParameter p2 = new SqlParameter("@clinica", this.clinica.id);
 
             p1.SqlDbType = SqlDbType.VarChar;
-            
+            p2.SqlDbType = SqlDbType.Int;
 
             cmd.Parameters.Add(p1);
-            
+            cmd.Parameters.Add(p2);
+
 
             if (id == true)
             {
