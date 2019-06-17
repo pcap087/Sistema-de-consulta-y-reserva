@@ -24,7 +24,7 @@ namespace ClassLibrary1
 
         public static void AgregarReserva(Reserva r)
         {
-            //listaProveedores.Add(p);
+            
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
@@ -65,6 +65,24 @@ namespace ClassLibrary1
 
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public static Reserva ObtenerReservaParametro(int id)
+        {
+            Reserva reserva= null;
+
+            if (listaReservas.Count == 0)Reserva.ObtenerReservas();
+
+            foreach (Reserva r in listaReservas)
+            {
+                if (r.id == id)
+                {
+                    reserva= r;
+                    break;
+                }
+
+            }
+            return reserva;
         }
 
         public static List<Reserva> ObtenerReservas()

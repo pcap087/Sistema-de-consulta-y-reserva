@@ -78,5 +78,11 @@ namespace InterfazConsultaReserva
             frmReserva form = new frmReserva();
             form.Show();
         }
+
+        private void tsmCita_Click(object sender, EventArgs e)
+        {
+            frmCita form = new frmCita();
+            form.Show();
+        }
     }
 }
