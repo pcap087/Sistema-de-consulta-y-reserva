@@ -137,7 +137,7 @@ namespace ClassLibrary1
 
         public override string ToString()
         {
-            return Convert.ToString(this.id);
+            return this.medico.nombre + " " + this.turno.descripcion;
         }
     }
 

@@ -115,7 +115,7 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "SELECT  id,descripcion,(SELECT CONVERT(VARCHAR, hora_inicio, 101) + ' ' + CONVERT(VARCHAR, DATEPART(hh, hora_inicio)) + ':' + RIGHT('0' + CONVERT(VARCHAR, DATEPART(mi, hora_inicio)), 2)) AS HoraInicio,(SELECT CONVERT(VARCHAR, hora_fin, 101) + ' ' + CONVERT(VARCHAR, DATEPART(hh, hora_fin)) + ':' + RIGHT('0' + CONVERT(VARCHAR, DATEPART(mi, hora_fin)), 2)) AS HoraFin FROM Turno";
+                string textoCmd = "SELECT  id, descripcion, hora_inicio, hora_fin FROM Turno";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -126,8 +126,8 @@ namespace ClassLibrary1
                     turno = new Turno();
                     turno.id= elLectorDeDatos.GetInt32(0);
                     turno.descripcion = elLectorDeDatos.GetString(1);
-                    turno.hora_inicio= Convert.ToDateTime(elLectorDeDatos.GetString(2));
-                    turno.hora_fin = Convert.ToDateTime(elLectorDeDatos.GetString(3));
+                    turno.hora_inicio= elLectorDeDatos.GetDateTime(2);
+                    turno.hora_fin = elLectorDeDatos.GetDateTime(3);
 
                     listaTurnos.Add(turno);
                 }
