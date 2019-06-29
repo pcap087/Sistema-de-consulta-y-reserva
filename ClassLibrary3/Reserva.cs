@@ -162,7 +162,7 @@ namespace ClassLibrary1
 
         public override string ToString()
         {
-            return paciente.nombre;
+            return paciente.nombre+" "+fecha_reservada.ToShortDateString();
         }
     }
 }
