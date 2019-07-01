@@ -17,6 +17,7 @@ namespace InterfazCarniceria
         public frmLogin()
         {
             InitializeComponent();
+        
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace InterfazCarniceria
         {
             frmCrearUsuario form = new frmCrearUsuario();
             form.Show();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
