@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
+using System.Data.SqlClient;
 
 namespace InterfazConsultaReserva
 {
@@ -22,13 +23,14 @@ namespace InterfazConsultaReserva
 
         private void frmReserva_Load(object sender, EventArgs e)
         {
-            Reserva r= new Reserva();
+            Reserva r = new Reserva();
 
 
             ActualizarListaReservas();
             cmbEstado.DataSource = Enum.GetValues(typeof(Estados));
             cmbPaciente.DataSource = Paciente.ObtenerPaciente();
-            cmbMedico.DataSource = Medico.ObtenerMedico();
+            var medicoId = Medico.ObtenerMedico().ToList();
+            cmbMedico.DataSource = medicoId;
             cmbFuncionario.DataSource = Funcionario.ObtenerFuncionario();
             cmbEstado.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
@@ -55,7 +57,7 @@ namespace InterfazConsultaReserva
 
         private void DesbloquearFormulario()
         {
-            
+
             cmbPaciente.Enabled = true;
             cmbMedico.Enabled = true;
             cmbFuncionario.Enabled = true;
@@ -71,14 +73,14 @@ namespace InterfazConsultaReserva
         private void LimpiarFormulario()
         {
 
-            cmbPaciente.SelectedItem= null;
+            cmbPaciente.SelectedItem = null;
             cmbMedico.SelectedItem = null;
             cmbFuncionario.SelectedItem = null;
             dtpFechaRegistro.Value = System.DateTime.Now;
-            dtpFechaReserva.Value= System.DateTime.Now;
+            dtpFechaReserva.Value = System.DateTime.Now;
             cmbEstado.SelectedItem = null;
-            txtMonto.Text= "";
-            
+            txtMonto.Text = "";
+
         }
 
         private void ActualizarListaReservas()
@@ -96,9 +98,9 @@ namespace InterfazConsultaReserva
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Reserva reserva= (Reserva)lstReservas.SelectedItem;
+            Reserva reserva = (Reserva)lstReservas.SelectedItem;
 
-            if (reserva!= null)
+            if (reserva != null)
             {
                 modo = "E";
                 DesbloquearFormulario();
@@ -111,7 +113,7 @@ namespace InterfazConsultaReserva
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Reserva reserva= (Reserva)lstReservas.SelectedItem;
+            Reserva reserva = (Reserva)lstReservas.SelectedItem;
             if (reserva != null)
             {
                 Reserva.EliminarReserva(reserva);
@@ -126,19 +128,19 @@ namespace InterfazConsultaReserva
 
         private Reserva ObtenerReservaFormulario()
         {
-            Reserva reserva= new Reserva();
+            Reserva reserva = new Reserva();
             if (!string.IsNullOrWhiteSpace(txtId.Text))
             {
                 reserva.id = Convert.ToInt32(txtId.Text);
             }
 
-            reserva.paciente= (Paciente)cmbPaciente.SelectedItem;
-            reserva.medico= (Medico)cmbMedico.SelectedItem;
-            reserva.funcionario= (Funcionario)cmbFuncionario.SelectedItem;
-            reserva.fecha_registro= dtpFechaRegistro.Value.Date;
-            reserva.fecha_reservada= dtpFechaReserva.Value.Date;
-            reserva.estados= (Estados)cmbEstado.SelectedItem;
-            reserva.monto= Convert.ToDouble(txtMonto.Text);
+            reserva.paciente = (Paciente)cmbPaciente.SelectedItem;
+            reserva.medico = (Medico)cmbMedico.SelectedItem;
+            reserva.funcionario = (Funcionario)cmbFuncionario.SelectedItem;
+            reserva.fecha_registro = dtpFechaRegistro.Value.Date;
+            reserva.fecha_reservada = dtpFechaReserva.Value.Date;
+            reserva.estados = (Estados)cmbEstado.SelectedItem;
+            reserva.monto = Convert.ToDouble(txtMonto.Text);
             return reserva;
         }
 
@@ -146,7 +148,7 @@ namespace InterfazConsultaReserva
         {
             if (modo == "I")
             {
-                Reserva reserva= ObtenerReservaFormulario();
+                Reserva reserva = ObtenerReservaFormulario();
 
                 Reserva.AgregarReserva(reserva);
 
@@ -156,7 +158,7 @@ namespace InterfazConsultaReserva
             {
                 int index = lstReservas.SelectedIndex;
 
-                Reserva reserva= ObtenerReservaFormulario();
+                Reserva reserva = ObtenerReservaFormulario();
                 Reserva.EditarReserva(index, reserva);
 
             }
@@ -179,7 +181,7 @@ namespace InterfazConsultaReserva
 
         private void lstReservas_Click(object sender, EventArgs e)
         {
-            Reserva reserva= (Reserva)lstReservas.SelectedItem;
+            Reserva reserva = (Reserva)lstReservas.SelectedItem;
 
             if (reserva != null)
             {
@@ -191,9 +193,40 @@ namespace InterfazConsultaReserva
                 dtpFechaReserva.Value = reserva.fecha_reservada;
                 cmbEstado.SelectedItem = (Estados)reserva.estados;
                 txtMonto.Text = Convert.ToString(reserva.monto);
-                
+
             }
 
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            var medicoId = (Medico)cmbMedico.SelectedItem;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+
+                    string textoCmd = "Select t.descripcion, d.dias_atencion, t.hora_inicio, t.hora_fin " +
+                    "from Disponibilidad d join medico m on m.id = d.medico join turno  t on d.turno = t.id " +
+                    "where d.medico = " + medicoId.id + " order by t.descripcion";
+
+
+                    SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                    SqlDataAdapter adap = new SqlDataAdapter(textoCmd, con);
+                    DataSet ds = new DataSet();
+                    adap.Fill(ds);
+                    frmConsulta dd = new frmConsulta(ds);
+                    dd.Show();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }

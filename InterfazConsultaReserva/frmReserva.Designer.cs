@@ -53,6 +53,7 @@
             this.lblEstados = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -300,12 +301,23 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Reserva";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(604, 157);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(63, 21);
+            this.btnConsultar.TabIndex = 57;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // frmReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazConsultaReserva.Properties.Resources.image;
-            this.ClientSize = new System.Drawing.Size(721, 489);
+            this.ClientSize = new System.Drawing.Size(716, 489);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.lblEstados);
@@ -367,5 +379,6 @@
         private System.Windows.Forms.Label lblEstados;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }
