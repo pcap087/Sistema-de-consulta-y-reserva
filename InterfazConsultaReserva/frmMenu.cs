@@ -73,15 +73,37 @@ namespace InterfazConsultaReserva
             form.Show();
         }
 
-        private void tsmReserva_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void tsmCita_Click_1(object sender, EventArgs e)
+        {
+            frmCita form = new frmCita();
+            form.Show();
+        }
+
+        private void tsmReserva_Click_1(object sender, EventArgs e)
         {
             frmReserva form = new frmReserva();
             form.Show();
         }
 
-        private void tsmCita_Click(object sender, EventArgs e)
+        private void tsmAcercaDe_Click(object sender, EventArgs e)
         {
-            frmCita form = new frmCita();
+            frmAcercaDe form = new frmAcercaDe();
+            form.Show();
+        }
+
+        private void tsmCancelarReservas_Click(object sender, EventArgs e)
+        {
+            frmCancelarReserva form = new frmCancelarReserva();
+            form.Show();
+        }
+
+        private void tsmVacacion_Click(object sender, EventArgs e)
+        {
+            frmVacacion form = new frmVacacion();
             form.Show();
         }
     }

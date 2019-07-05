@@ -33,15 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,10 +52,17 @@
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaMedicaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
+    <Compile Include="frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCancelarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCancelarReserva.Designer.cs">
+      <DependentUpon>frmCancelarReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCita.cs">
       <SubType>Form</SubType>
@@ -148,17 +148,22 @@
     <Compile Include="frmTurno.Designer.cs">
       <DependentUpon>frmTurno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteMedico.cs">
+    <Compile Include="frmVacacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteMedico.Designer.cs">
-      <DependentUpon>ReporteMedico.cs</DependentUpon>
+    <Compile Include="frmVacacion.Designer.cs">
+      <DependentUpon>frmVacacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCancelarReserva.resx">
+      <DependentUpon>frmCancelarReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCita.resx">
       <DependentUpon>frmCita.cs</DependentUpon>
@@ -202,27 +207,14 @@
     <EmbeddedResource Include="frmTurno.resx">
       <DependentUpon>frmTurno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVacacion.resx">
+      <DependentUpon>frmVacacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="reporteMedico.rdlc" />
-    <EmbeddedResource Include="ReporteMedico.resx">
-      <DependentUpon>ReporteMedico.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="ConsultaMedicaDataSet.xsc">
-      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ConsultaMedicaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConsultaMedicaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ConsultaMedicaDataSet.xss">
-      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -274,20 +266,7 @@
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imprimir.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\login2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
