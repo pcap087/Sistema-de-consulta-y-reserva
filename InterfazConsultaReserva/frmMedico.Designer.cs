@@ -40,6 +40,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMedico = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(385, 462);
+            this.btnLimpiar.Location = new System.Drawing.Point(352, 462);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 31);
             this.btnLimpiar.TabIndex = 24;
@@ -170,7 +171,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(215, 462);
+            this.btnGuardar.Location = new System.Drawing.Point(182, 462);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 31);
             this.btnGuardar.TabIndex = 36;
@@ -182,7 +183,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(306, 462);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 462);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(73, 31);
             this.btnCancelar.TabIndex = 35;
@@ -210,11 +211,23 @@
             this.lblMedico.TabIndex = 38;
             this.lblMedico.Text = "Medico";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(433, 462);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Imprimir";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(679, 505);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
@@ -247,6 +260,7 @@
             this.Controls.SetChildIndex(this.txtDireccion, 0);
             this.Controls.SetChildIndex(this.txtEdad, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -267,5 +281,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMedico;
+        private System.Windows.Forms.Button button1;
     }
 }

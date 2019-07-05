@@ -82,6 +82,7 @@ namespace InterfazConsultaReserva
             cmbEspecialidad.DataSource = Enum.GetValues(typeof(Especialidades));
             cmbEspecialidad.SelectedItem = null;
             BloquearFormulario();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -211,6 +212,14 @@ namespace InterfazConsultaReserva
             ActualizarListaMedico();
             LimpiarFormulario();
             BloquearFormulario();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //btn que abre el reporte
+            ReporteMedico formReporteMedico = new ReporteMedico();
+            formReporteMedico.Show();
+
         }
     }
 }
