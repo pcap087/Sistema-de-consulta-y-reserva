@@ -99,7 +99,6 @@ namespace ClassLibrary1
             SqlParameter p9 = new SqlParameter("@id", this.id);
             p9.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(p9);
-
             return cmd;
         }
         public override string ToString()

@@ -45,8 +45,12 @@
             this.ciudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disponibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReserva = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCancelarReservas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmVacacion = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +86,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenimientoToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem,
+            this.procesoToolStripMenuItem,
+            this.tsmAcercaDe});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(732, 24);
@@ -100,8 +106,7 @@
             this.ciudadToolStripMenuItem,
             this.consultorioToolStripMenuItem,
             this.disponibilidadToolStripMenuItem,
-            this.tsmReserva,
-            this.tsmCita});
+            this.tsmVacacion});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -162,19 +167,50 @@
             this.disponibilidadToolStripMenuItem.Text = "Disponibilidad";
             this.disponibilidadToolStripMenuItem.Click += new System.EventHandler(this.disponibilidadToolStripMenuItem_Click);
             // 
+            // procesoToolStripMenuItem
+            // 
+            this.procesoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmReserva,
+            this.tsmCita,
+            this.tsmCancelarReservas});
+            this.procesoToolStripMenuItem.Name = "procesoToolStripMenuItem";
+            this.procesoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.procesoToolStripMenuItem.Text = "Proceso";
+            // 
             // tsmReserva
             // 
             this.tsmReserva.Name = "tsmReserva";
-            this.tsmReserva.Size = new System.Drawing.Size(180, 22);
+            this.tsmReserva.Size = new System.Drawing.Size(165, 22);
             this.tsmReserva.Text = "Reserva";
-            this.tsmReserva.Click += new System.EventHandler(this.tsmReserva_Click);
+            this.tsmReserva.Click += new System.EventHandler(this.tsmReserva_Click_1);
             // 
             // tsmCita
             // 
             this.tsmCita.Name = "tsmCita";
-            this.tsmCita.Size = new System.Drawing.Size(180, 22);
+            this.tsmCita.Size = new System.Drawing.Size(165, 22);
             this.tsmCita.Text = "Cita";
-            this.tsmCita.Click += new System.EventHandler(this.tsmCita_Click);
+            this.tsmCita.Click += new System.EventHandler(this.tsmCita_Click_1);
+            // 
+            // tsmCancelarReservas
+            // 
+            this.tsmCancelarReservas.Name = "tsmCancelarReservas";
+            this.tsmCancelarReservas.Size = new System.Drawing.Size(165, 22);
+            this.tsmCancelarReservas.Text = "CancelarReservas";
+            this.tsmCancelarReservas.Click += new System.EventHandler(this.tsmCancelarReservas_Click);
+            // 
+            // tsmAcercaDe
+            // 
+            this.tsmAcercaDe.Name = "tsmAcercaDe";
+            this.tsmAcercaDe.Size = new System.Drawing.Size(71, 20);
+            this.tsmAcercaDe.Text = "Acerca de";
+            this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
+            // 
+            // tsmVacacion
+            // 
+            this.tsmVacacion.Name = "tsmVacacion";
+            this.tsmVacacion.Size = new System.Drawing.Size(180, 22);
+            this.tsmVacacion.Text = "Vacacion";
+            this.tsmVacacion.Click += new System.EventHandler(this.tsmVacacion_Click);
             // 
             // frmMenu
             // 
@@ -213,8 +249,12 @@
         private System.Windows.Forms.ToolStripMenuItem ciudadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disponibilidadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmReserva;
+        private System.Windows.Forms.ToolStripMenuItem procesoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmCita;
+        private System.Windows.Forms.ToolStripMenuItem tsmReserva;
+        private System.Windows.Forms.ToolStripMenuItem tsmAcercaDe;
+        private System.Windows.Forms.ToolStripMenuItem tsmCancelarReservas;
+        private System.Windows.Forms.ToolStripMenuItem tsmVacacion;
     }
 }
 

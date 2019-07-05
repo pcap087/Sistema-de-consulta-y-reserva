@@ -160,6 +160,40 @@ namespace ClassLibrary1
             return cmd;
         }
 
+        public static DataTable ObtenerReservaPendientes()
+        {
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = "SELECT r.id, med.nombre,pac.nombre,r.estados,v.fecha_inicio,v.fecha_fin,r.fecha_reservada FROM Reserva r inner join Paciente pac on r.paciente = pac.id inner join Medico med on r.medico = med.id inner join Vacacion v on med.id = v.medico where r.estados = 0 and (r.fecha_reservada>= v.fecha_inicio and r.fecha_reservada<= v.fecha_fin)";
+                //string textoCmd = "select * from Reserva where estados=0";
+
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                DataTable tabla = new DataTable();
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+            }
+        }
+
+        public static void CancelarReservas(List<int> listaIds)
+        {
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                foreach (int id in listaIds)
+                {
+                    string textoCmd = @"UPDATE Reserva SET estados=2 where id = @id";
+                    SqlCommand cmd = new SqlCommand(textoCmd, con);
+                    SqlParameter p1 = new SqlParameter("@id", id);
+                    p1.SqlDbType = SqlDbType.Int;
+                    cmd.Parameters.Add(p1);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public override string ToString()
         {
             return paciente.nombre+" "+fecha_reservada.ToShortDateString();

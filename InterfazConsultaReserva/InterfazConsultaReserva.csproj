@@ -52,6 +52,18 @@
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCancelarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCancelarReserva.Designer.cs">
+      <DependentUpon>frmCancelarReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,10 +148,22 @@
     <Compile Include="frmTurno.Designer.cs">
       <DependentUpon>frmTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVacacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVacacion.Designer.cs">
+      <DependentUpon>frmVacacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCancelarReserva.resx">
+      <DependentUpon>frmCancelarReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCita.resx">
       <DependentUpon>frmCita.cs</DependentUpon>
@@ -182,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTurno.resx">
       <DependentUpon>frmTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVacacion.resx">
+      <DependentUpon>frmVacacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
