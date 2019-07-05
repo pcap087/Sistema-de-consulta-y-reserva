@@ -228,6 +228,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporteMedico.rdlc" />
     <EmbeddedResource Include="ReporteMedico.resx">
       <DependentUpon>ReporteMedico.cs</DependentUpon>
     </EmbeddedResource>
