@@ -52,6 +52,12 @@
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaMedicaDataSet.Designer.cs" />
+    <Compile Include="ConsultaMedicaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,7 @@
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +231,17 @@
     <EmbeddedResource Include="ReporteMedico.resx">
       <DependentUpon>ReporteMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ConsultaMedicaDataSet.xsc">
+      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConsultaMedicaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsultaMedicaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConsultaMedicaDataSet.xss">
+      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
