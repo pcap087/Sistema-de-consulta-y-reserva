@@ -215,8 +215,10 @@ namespace InterfazConsultaReserva
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //btn que abre el reporte
             ReporteMedico formReporteMedico = new ReporteMedico();
             formReporteMedico.Show();
+
         }
     }
 }

@@ -156,6 +156,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMedico.Designer.cs">
+      <DependentUpon>ReporteMedico.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +220,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMedico.resx">
+      <DependentUpon>ReporteMedico.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
