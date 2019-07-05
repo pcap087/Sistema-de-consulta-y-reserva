@@ -212,5 +212,11 @@ namespace InterfazConsultaReserva
             LimpiarFormulario();
             BloquearFormulario();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReporteMedico formReporteMedico = new ReporteMedico();
+            formReporteMedico.Show();
+        }
     }
 }

@@ -129,6 +129,7 @@ namespace InterfazConsultaReserva
         private Reserva ObtenerReservaFormulario()
         {
             Reserva reserva = new Reserva();
+
             if (!string.IsNullOrWhiteSpace(txtId.Text))
             {
                 reserva.id = Convert.ToInt32(txtId.Text);
@@ -183,17 +184,25 @@ namespace InterfazConsultaReserva
         {
             Reserva reserva = (Reserva)lstReservas.SelectedItem;
 
-            if (reserva != null)
-            {
-                txtId.Text = Convert.ToString(reserva.id);
-                cmbPaciente.SelectedItem = (Paciente)Paciente.ObtenerPacienteParametro(reserva.paciente.id);
-                cmbMedico.SelectedItem = (Medico)Medico.ObtenerMed(reserva.medico.id);
-                cmbFuncionario.SelectedItem = (Funcionario)Funcionario.ObtenerFuncionarioParametro(reserva.funcionario.id);
-                dtpFechaRegistro.Value = reserva.fecha_registro;
-                dtpFechaReserva.Value = reserva.fecha_reservada;
-                cmbEstado.SelectedItem = (Estados)reserva.estados;
-                txtMonto.Text = Convert.ToString(reserva.monto);
+            try
+            { 
 
+                if (reserva != null)
+                {
+                    txtId.Text = Convert.ToString(reserva.id);
+                    cmbPaciente.SelectedItem = (Paciente)Paciente.ObtenerPacienteParametro(reserva.paciente.id);
+                    cmbMedico.SelectedItem = (Medico)Medico.ObtenerMed(reserva.medico.id);
+                    cmbFuncionario.SelectedItem = (Funcionario)Funcionario.ObtenerFuncionarioParametro(reserva.funcionario.id);
+                    dtpFechaRegistro.Value = reserva.fecha_registro;
+                    dtpFechaReserva.Value = reserva.fecha_reservada;
+                    cmbEstado.SelectedItem = (Estados)reserva.estados;
+                    txtMonto.Text = Convert.ToString(reserva.monto);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
 
         }
