@@ -59,7 +59,7 @@ namespace ProyectoReservasConsultas
             Clinica c = new Clinica();
             ActualidadListaClinica();
             cmbCiudad.DataSource = Ciudad.ObtenerCiudades();
-            cmbCiudad.SelectedItem = null;
+            cmbCiudad.SelectedItem = 0;
             BloquearFormularioClinica();
 
         }
@@ -122,6 +122,42 @@ namespace ProyectoReservasConsultas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string V_VALOR = "";
+            if (txtDescripcion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el Nombre de la Clínica", "Advertencia");
+                txtDescripcion.SelectAll();
+                txtDescripcion.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (txtDireccion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese la dirección de la Clínica", "Advertencia");
+                txtDireccion.SelectAll();
+                txtDireccion.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (txtTelefono.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el teléfono de la Clínica", "Advertencia");
+                txtTelefono.SelectAll();
+                txtTelefono.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (cmbCiudad.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar una Ciudad", "Advertencia");
+                cmbCiudad.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
             if (modo == "I")
             {
                 Clinica clinica= ObtenerClinicaFormulario();
@@ -137,6 +173,24 @@ namespace ProyectoReservasConsultas
         {
             LimpiarFormulario();
             BloquearFormularioClinica();
+        }
+        private string ValidacionesClinica()
+        {
+            string v_mensaje = "OK";
+            if (txtDescripcion.Text.Trim() == "")
+            {
+                v_mensaje = "Favor Ingrese la Descripcion de la Clínica";
+            }
+            else if (txtDireccion.Text.Trim() == "")
+            {
+                v_mensaje = "Favor Ingrese la dirección de la Clínica";
+            }
+            else if (txtTelefono.Text.Trim() == "")
+            {
+                v_mensaje = "Favor Ingrese el teléfono de la Clínica";
+            }
+
+            return v_mensaje;
         }
     }
 }

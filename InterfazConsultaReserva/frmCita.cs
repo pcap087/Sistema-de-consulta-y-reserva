@@ -31,12 +31,12 @@ namespace InterfazConsultaReserva
             cmbTurno.DataSource= Turno.ObtenerTurnos();
             cmbConsultorio.DataSource = Consultorio.ObtenerConsultorios();
             cmbReserva.DataSource= Reserva.ObtenerReservas();
-            cmbPaciente.SelectedItem = null;
-            cmbMedico.SelectedItem = null;
-            cmbFuncionario.SelectedItem = null;
-            cmbTurno.SelectedItem = null;
-            cmbConsultorio.SelectedItem = null;
-            cmbReserva.SelectedItem = null;
+            cmbPaciente.SelectedItem = 0;
+            cmbMedico.SelectedItem = 0;
+            cmbFuncionario.SelectedItem = 0;
+            cmbTurno.SelectedItem = 0;
+            cmbConsultorio.SelectedItem = 0;
+            cmbReserva.SelectedItem = 0;
             BloquearFormulario();
 
         }
@@ -146,19 +146,78 @@ namespace InterfazConsultaReserva
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
-            {
-                Cita cita= ObtenerCitaFormulario();
-                Cita.AgregarCita(cita);
+            string V_VALOR = "";
 
+            if (dtpFecha.Value < System.DateTime.Today)
+            {
+                MessageBox.Show("La fecha de la cita no puede ser menor a la Fecha actual", "Advertencia");
+                dtpFecha.Focus();
+                V_VALOR = "-1";
+                return;
             }
-            else if (modo == "E")
+            if (cmbPaciente.SelectedIndex<0)
             {
-                int index = lstCitas.SelectedIndex;
+                MessageBox.Show("Debe seleccionar un paciente", "Advertencia");
+                cmbPaciente.Focus();
+                V_VALOR = "-1";
+                return;
+            }
 
-                Cita cita = ObtenerCitaFormulario();
-                Cita.EditarCita(index, cita);
+            if (cmbMedico.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar un médico", "Advertencia");
+                cmbMedico.Focus();
+                V_VALOR = "-1";
+                return;
+            }
 
+            if (cmbFuncionario.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar un funcionario", "Advertencia");
+                cmbFuncionario.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (cmbTurno.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar un turno", "Advertencia");
+                cmbTurno.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (cmbConsultorio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar un consultorio", "Advertencia");
+                cmbConsultorio.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (cmbReserva.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar una reserva", "Advertencia");
+                cmbReserva.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+            if (V_VALOR == "")
+            {
+                if (modo == "I")
+                {
+                    Cita cita = ObtenerCitaFormulario();
+                    Cita.AgregarCita(cita);
+
+                }
+                else if (modo == "E")
+                {
+                    int index = lstCitas.SelectedIndex;
+
+                    Cita cita = ObtenerCitaFormulario();
+                    Cita.EditarCita(index, cita);
+
+                }
             }
 
             ActualizarListaCitas();

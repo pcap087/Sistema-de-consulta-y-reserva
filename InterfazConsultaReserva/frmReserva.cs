@@ -32,10 +32,10 @@ namespace InterfazConsultaReserva
             var medicoId = Medico.ObtenerMedico().ToList();
             cmbMedico.DataSource = medicoId;
             cmbFuncionario.DataSource = Funcionario.ObtenerFuncionario();
-            cmbEstado.SelectedItem = null;
-            cmbPaciente.SelectedItem = null;
-            cmbMedico.SelectedItem = null;
-            cmbFuncionario.SelectedItem = null;
+            cmbEstado.SelectedItem = 0;
+            cmbPaciente.SelectedItem = 0;
+            cmbMedico.SelectedItem = 0;
+            cmbFuncionario.SelectedItem = 0;
             BloquearFormulario();
 
         }
@@ -61,7 +61,6 @@ namespace InterfazConsultaReserva
             cmbPaciente.Enabled = true;
             cmbMedico.Enabled = true;
             cmbFuncionario.Enabled = true;
-            dtpFechaRegistro.Enabled = true;
             dtpFechaReserva.Enabled = true;
             cmbEstado.Enabled = true;
             txtMonto.Enabled = true;
@@ -146,27 +145,87 @@ namespace InterfazConsultaReserva
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
+            string V_VALOR = "";
+
+            if (dtpFechaReserva.Value < System.DateTime.Today)
             {
-                Reserva reserva = ObtenerReservaFormulario();
-
-                Reserva.AgregarReserva(reserva);
-
-
+                MessageBox.Show("La fecha de la reserva no puede ser menor a la Fecha actual", "Advertencia");
+                dtpFechaReserva.Focus();
+                V_VALOR = "-1";
+                return;
             }
-            else if (modo == "E")
+
+            
+
+            if (cmbPaciente.SelectedIndex < 0)
             {
-                int index = lstReservas.SelectedIndex;
+                MessageBox.Show("Debe seleccionar un paciente", "Advertencia");
+                cmbPaciente.Focus();
+                V_VALOR = "-1";
+                return;
+            }
 
-                Reserva reserva = ObtenerReservaFormulario();
-                Reserva.EditarReserva(index, reserva);
+            if (cmbMedico.SelectedIndex <0)
+            {
+                MessageBox.Show("Debe seleccionar un médico", "Advertencia");
+                cmbMedico.Focus();
+                V_VALOR = "-1";
+                return;
+            }
 
+            if (cmbEstado.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar un estado", "Advertencia");
+                cmbEstado.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (cmbFuncionario.SelectedIndex <0)
+            {
+                MessageBox.Show("Debe seleccionar un funcionario", "Advertencia");
+                cmbFuncionario.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            try
+            {
+                int result = int.Parse(txtMonto.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Favor introduzca un valor numerico");
+                txtMonto.Text = "";
+                txtMonto.SelectAll();
+                txtMonto.Focus();
+                V_VALOR = "-1";
+            }
+            if (V_VALOR == "")
+            {
+                if (modo == "I")
+                {
+                    Reserva reserva = ObtenerReservaFormulario();
+
+                    Reserva.AgregarReserva(reserva);
+
+
+                }
+                else if (modo == "E")
+                {
+                    int index = lstReservas.SelectedIndex;
+
+                    Reserva reserva = ObtenerReservaFormulario();
+                    Reserva.EditarReserva(index, reserva);
+
+                }
             }
 
             ActualizarListaReservas();
             LimpiarFormulario();
             BloquearFormulario();
         }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -226,6 +285,26 @@ namespace InterfazConsultaReserva
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

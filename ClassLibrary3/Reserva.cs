@@ -165,7 +165,7 @@ namespace ClassLibrary1
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "SELECT r.id, med.nombre,pac.nombre,r.estados,v.fecha_inicio,v.fecha_fin,r.fecha_reservada FROM Reserva r inner join Paciente pac on r.paciente = pac.id inner join Medico med on r.medico = med.id inner join Vacacion v on med.id = v.medico where r.estados = 0 and (r.fecha_reservada>= v.fecha_inicio and r.fecha_reservada<= v.fecha_fin)";
+                string textoCmd = "SELECT r.id, med.nombre as Medico,pac.nombre as Paciente,r.estados,v.fecha_inicio as Inicio_Vacacion,v.fecha_fin as Fin_Vacacion,r.fecha_reservada as Fecha_Reserva FROM Reserva r inner join Paciente pac on r.paciente = pac.id inner join Medico med on r.medico = med.id inner join Vacacion v on med.id = v.medico where r.estados = 0 and (r.fecha_reservada>= v.fecha_inicio and r.fecha_reservada<= v.fecha_fin)";
                 //string textoCmd = "select * from Reserva where estados=0";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);

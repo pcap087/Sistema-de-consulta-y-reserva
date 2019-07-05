@@ -109,8 +109,29 @@ namespace ProyectoReservasConsultas
             DesbloquearFormularioCiudad();
         }
 
+        private string ValidacionesCiudad()
+        {
+            string v_mensaje = "OK";
+            if (txtDescCiudad.Text.Trim() == "")
+            {
+                v_mensaje = "Favor Ingrese la Descripcion de la Ciudad";
+            }
+
+            return v_mensaje;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string V_VALOR = "";
+            if (txtDescCiudad.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el Nombre de la Ciudad", "Advertencia");
+                txtDescCiudad.SelectAll();
+                txtDescCiudad.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
             if (modo == "I")
             {
                 Ciudad ciudad= ObtenerCiudadFormulario();

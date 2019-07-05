@@ -28,13 +28,25 @@ namespace InterfazConsultaReserva
         {
             Consultorio c = new Consultorio();
             cmbClinica.DataSource = Clinica.ObtenerClinicas();
-            cmbClinica.SelectedItem = null;
+            cmbClinica.SelectedItem = 0;
 
             ActualizarListaConsultorios();
 
             BloquearFormulario();
 
         }
+
+        private string ValidacionesClinica()
+        {
+            string v_mensaje = "OK";
+            if (txtDescripcion.Text.Trim() == "")
+            {
+                v_mensaje = "Favor Ingrese la Descripcion del Consultorio";
+            }
+
+            return v_mensaje;
+        }
+
         private void BloquearFormulario()
         {
             txtId.Enabled = false;
@@ -109,15 +121,34 @@ namespace InterfazConsultaReserva
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
+            string V_VALOR = "";
+            if (txtDescripcion.Text.Trim() == "")
             {
-                Consultorio consultorio = ObtenerConsultorioFormulario();
-
-                Consultorio.AgregarConsultorio(consultorio);
-
-
+                MessageBox.Show("Favor Ingrese la descripción del Consultorio", "Advertencia");
+                txtDescripcion.SelectAll();
+                txtDescripcion.Focus();
+                V_VALOR = "-1";
+                return;
             }
-            
+
+            if (cmbClinica.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar una Ciudad", "Advertencia");
+                cmbClinica.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+            if (V_VALOR == "")
+            {
+                if (modo == "I")
+                {
+                    Consultorio consultorio = ObtenerConsultorioFormulario();
+
+                    Consultorio.AgregarConsultorio(consultorio);
+
+
+                }
+            }
             ActualizarListaConsultorios();
             LimpiarFormulario();
             BloquearFormulario();
