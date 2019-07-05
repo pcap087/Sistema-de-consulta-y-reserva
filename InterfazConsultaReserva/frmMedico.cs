@@ -82,6 +82,7 @@ namespace InterfazConsultaReserva
             cmbEspecialidad.DataSource = Enum.GetValues(typeof(Especialidades));
             cmbEspecialidad.SelectedItem = null;
             BloquearFormulario();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +55,7 @@
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaMedicaDataSet.Designer.cs" />
-    <Compile Include="ConsultaMedicaDataSet1.Designer.cs">
+    <Compile Include="ConsultaMedicaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
@@ -228,7 +230,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="reporteMedico.rdlc" />
+    <EmbeddedResource Include="ReporteMedico.rdlc" />
     <EmbeddedResource Include="ReporteMedico.resx">
       <DependentUpon>ReporteMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,7 +239,7 @@
     </None>
     <None Include="ConsultaMedicaDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConsultaMedicaDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ConsultaMedicaDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="ConsultaMedicaDataSet.xss">
