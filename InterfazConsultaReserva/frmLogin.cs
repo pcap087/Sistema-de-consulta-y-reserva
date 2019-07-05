@@ -22,6 +22,7 @@ namespace InterfazCarniceria
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+          
             if (txtUsuario.Text.Trim().Equals(string.Empty))
             {
                 MessageBox.Show("Favor Ingresa el Usuario");
@@ -33,19 +34,27 @@ namespace InterfazCarniceria
                 MessageBox.Show("Favor Ingresa la clave");
                 return;
             }
+            try
+            {
+                if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
+                {
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + txtUsuario.Text);
+                    frmMenu elmenuPrincipal = new frmMenu();
+                    elmenuPrincipal.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
 
-            if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
-            {
-                this.Hide();
-                MessageBox.Show("Bienvenido " + txtUsuario.Text);
-                frmMenu elmenuPrincipal = new frmMenu();
-                elmenuPrincipal.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos");
-            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
